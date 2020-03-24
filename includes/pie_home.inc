@@ -7,7 +7,7 @@
 
         <footer class="color4">
             <br>
-                <p>Derechos reservados @2016 Factory Soft S.A</p>
+                <p></p>
 			</br>
         </footer>
 		
