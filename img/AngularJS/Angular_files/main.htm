@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <style>
+    body { overflow: hidden; }
+    #spinner:before { content: ""; position: absolute; height:200px; width:100%; top:0; left:0; background: transparent url("https://widget-prime.rafflecopter.com/static/img/load.gif") no-repeat center center; }
+    #spinner { margin:0 auto; width:100%; font-family: Sans-serif; font-size: 13px; color: #999; text-align: center; margin-top: 150px; }
+  </style>
+  
+  <link id="google-font-header" rel="stylesheet" href="main.htm">
+  <link id="google-font-body" rel="stylesheet" href="main.htm">
+
+<link rel="stylesheet" href="main_data/default.css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body>
+  
+
+  <script src="main_data/sdk.js" id="facebook-jssdk"></script><script>
+    var messages = [
+       "Beaming the giveaway up"
+      ,"Engaging giveaway-thrusters"
+      ,"Discovering the big giveaway theory"
+      ,"Routing giveaway through the interwebs"
+      ,"One Giveaway, shaken not stirred"
+    ]
+    document.getElementById('spinner').innerHTML = messages[Math.floor(Math.random() * messages.length)]
+  </script>
+  <script src="main_data/main.js"></script>
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="main_data/xd_arbiter.htm" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div></div><div>
+    <div>
+
+</div>
+    <div class="raflcptr" keep-if="full_widget">
+        <div id="title-bar">
+            <div class="title-progress">
+    <b style="width:0%;" class="progress-bar"></b>
+</div>
+        </div>
+
+        <div id="scoreboard">
+  <div class="scoreboard-panel scoreboard-time-left late" class-if="ok(status.is_ok) late(status.is_late) early(status.is_early) closed(status.is_closed)">
+
+    
+
+    <div class="status-late" keep-if="status.is_late">
+        <b class="scoreboard-label" i18n="">It's<br><strong>over!</strong></b>
+    </div>
+
+    
+
+    
+
+</div>
+  <div class="scoreboard-panel scoreboard-total-entries visible tooltip-parent" class-if="running(is_running)" data-visible="show_total_entries">
+    <span class="tooltip tooltip-orient-below" tooltip="orientation=below" i18n="">There are 1700 entries so far!</span>
+    <div class="number-flipper-group small" class-if="small(small_nums)">
+        <span class="number-flipper">1</span><span class="number-flipper">,</span><span class="number-flipper">7</span><span class="number-flipper">0</span><span class="number-flipper">0</span>
+    </div>
+</div>
+  <div class="scoreboard-panel scoreboard-entries-avail tooltip-parent" class-if="running(is_running)" on-click="togglePercent">
+
+    <span class="tooltip tooltip-orient-below" tooltip="orientation=below" i18n="">You've earned 0% of your possible entries</span>
+
+    <div class="scoreboard-labeled-num">
+
+        <div class="scoreboard-bignum number hidden" keep-if="!is_finished" data-visible="show_percent">0<i class="percent">%</i></div>
+
+        <div class="scoreboard-bignum number scoreboard-fraction" class-if="hidden(show_percent)" keep-if="!is_finished"><span class="numerator">0</span><span class="line">/</span><span class="denominator">8</span>
+        </div>
+
+        <b class="scoreboard-label hidden" data-visible="show_label" keep-if="!is_finished" i18n="">complete</b>
+
+        
+
+        
+    </div>
+</div>
+  <div class="scoreboard-panel scoreboard-dropdown" class-if="running(is_running) open(show_dropdown)">
+    <a href="#" class="dropdown-toggle disabled" class-if="disabled(is_logged_out)" on-click="toggleMenu">
+        <span class="dropdown-toggle-inner">
+            <i class="icon-hamburger-dropdown"></i>
+            <i class="icon-arrow"></i>
+        </span>
+    </a>
+
+    <ul class="scoreboard-dropdown-menu">
+        <!-- TODO: avatar image -->
+        <li class="scoreboard-dropdown-profile">
+            <img src="main.htm" class="scoreboard-dropdown-icon scoreboard-avatar" data-src="avatar_url">
+            <div class="scoreboard-dropdown-label scoreboard-name"><span i18n="">Hi</span>, !</div>
+            <div class="scoreboard-dropdown-small scoreboard-entry-count">
+              <span class="hidden" data-hidden="finished_plural" i18n="">
+                You have 1 entry.
+              </span>
+              <span class="visible" data-visible="finished_plural" i18n="">
+                You have 0 entries.
+              </span>
+            </div>
+        </li>
+
+        <li class="link small">
+            <a href="#" class="scoreboard-logout" on-click="logout">
+                <span class="scoreboard-dropdown-label" i18n="">Log Out</span>
+            </a>
+        </li>
+    </ul>
+</div>
+</div>
+
+        <div id="prizes">
+  <div style="height: 417px;" class="prizes-container">
+    <ul class="prize-list">
+      <li class="prize-container present" class-if-cond="past(i &lt; selected) present(i == selected) future(i &gt; selected)">
+        <div class="prize-title">
+    <div block-title-if="block" class-if="block-title-outer(block)" class="prize-title-line">
+
+        <div class-if="block-title-inner(block)" data-html="text"><span>Raspberry Pi 2 Model B</span></div>
+    
+    </div>
+</div>
+        <div class="prize-image visible" style="background-image:url(https://www.filepicker.io/api/file/EQUU4TKSaCUXWoB6DNLw/convert?dl=false&amp;crop=0,0,500,320&amp;quality=95&amp;fit=scale&amp;cache=true);" data-visible="imgurl"></div>
+      </li>
+    </ul>
+  </div>
+
+  
+</div>
+
+        <div id="pages">
+    <div class="notice-banner-container">
+        <div class="hidden" id="notice-banner" data-visible="notification" data-text="notification"></div>
+    </div>
+
+    <div class="hidden" data-visible="page.login">
+        <div id="page-login">
+  <div id="fblogin-box">
+      <p i18n="">Log in to enter this giveaway.</p>
+      <div id="fblogin-wrapper" keep-if="!hide_fb">
+          <div class="fb-login-button" on-click="onClickLogin">
+  <img class="icon-facebook" src="main_data/jVG1f1GslU7.png">
+  <span class="login-text">Log In</span>
+</div>
+          <em i18n="">or</em>
+          <a href="#" id="emlogin-alt" on-click="popupLogin" i18n="">Use Your Email</a>
+      </div>
+      
+  </div>
+</div>
+    </div>
+
+    <div class="hidden" id="page-enter" data-visible="page.enter">
+        <span></span>
+
+        <ul id="entry-options">
+  <li class="entry-option  incomplete visible tooltip-parent" data-visible="show" data-index="0" class-if="complete incomplete submitting" on-click="enter" hover-var="hover">
+
+    <span class="tooltip tooltip-orient-above hidden" tooltip="orientation=above&amp;timeout=100" data-visible="incomplete_and_singular" i18n="">
+      Click to submit 1 entry
+    </span>
+    <span class="tooltip tooltip-orient-above visible" tooltip="orientation=above&amp;timeout=100" data-visible="incomplete_and_plural" i18n="">
+      Click to submit 5 entries
+    </span>
+
+    <div class="entry-option-score max-5" keep-if="!complete">
+        <b class="entry-option-score-bar filled">
+            &nbsp;
+        </b><b class="entry-option-score-bar filled">
+            &nbsp;
+        </b><b class="entry-option-score-bar filled">
+            &nbsp;
+        </b><b class="entry-option-score-bar filled">
+            &nbsp;
+        </b><b class="entry-option-score-bar filled">
+            &nbsp;
+        </b>
+    </div>
+
+    
+
+    <span class="entry-option-checkmark hidden" data-visible="complete">&#10004;&nbsp;&nbsp;</span>
+
+    <div class=" entry-option-title mode-twitter">
+      <b class="title entry-option-title-facebook" i18n="">Like  on Facebook</b>
+      <b class="title entry-option-title-fblike" i18n="">Easy entry for fans of this blog post</b>
+      <b class="title entry-option-title-twitter" i18n="">Tweet about the giveaway</b>
+      <b class="title entry-option-title-twfollow" i18n="">Follow  on Twitter</b>
+      <b class="title entry-option-title-pinfollow" i18n="">Follow  on Pinterest</b>
+      <b class="title entry-option-title-pinit" i18n="">Pin this image on Pinterest</b>
+      <b class="title entry-option-title-emlist" i18n="">Join the  mailing list</b>
+      <b class="title entry-option-title-poll"></b>
+      <b class="title entry-option-title-custom"></b>
+      <b class="title entry-option-title-comment" i18n="">Leave a blog post comment</b>
+      <b class="title entry-option-title-fbvisit" i18n="">Visit  on Facebook</b>
+
+      <span class="hidden" data-visible="complete">
+        <div class="opt-tmrw hidden" data-visible="daily" i18n="">
+          Do this again tomorrow for more entries!
+        </div>
+      </span>
+    </div>
+
+    <div class="entry-option-arrow visible" data-hidden="complete" data-svg="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M15.324 14.345l-4.124 5.133 14.46 15.16 14.457-15.305-4.12-5.132-10.337 11.016z"></path></svg></div>
+  </li><li class="entry-option  incomplete visible tooltip-parent" data-visible="show" data-index="1" class-if="complete incomplete submitting" on-click="enter" hover-var="hover">
+
+    <span class="tooltip tooltip-orient-above visible" tooltip="orientation=above&amp;timeout=100" data-visible="incomplete_and_singular" i18n="">
+      Click to submit 1 entry
+    </span>
+    <span class="tooltip tooltip-orient-above hidden" tooltip="orientation=above&amp;timeout=100" data-visible="incomplete_and_plural" i18n="">
+      Click to submit 1 entries
+    </span>
+
+    <div class="entry-option-score max-5" keep-if="!complete">
+        <b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar filled">
+            &nbsp;
+        </b>
+    </div>
+
+    
+
+    <span class="entry-option-checkmark hidden" data-visible="complete">&#10004;&nbsp;&nbsp;</span>
+
+    <div class=" entry-option-title mode-fbvisit">
+      <b class="title entry-option-title-facebook" i18n="">Like Scotch.io on Facebook</b>
+      <b class="title entry-option-title-fblike" i18n="">Easy entry for fans of this blog post</b>
+      <b class="title entry-option-title-twitter" i18n="">Tweet about the giveaway</b>
+      <b class="title entry-option-title-twfollow" i18n="">Follow  on Twitter</b>
+      <b class="title entry-option-title-pinfollow" i18n="">Follow Scotch.io on Pinterest</b>
+      <b class="title entry-option-title-pinit" i18n="">Pin this image on Pinterest</b>
+      <b class="title entry-option-title-emlist" i18n="">Join the  mailing list</b>
+      <b class="title entry-option-title-poll"></b>
+      <b class="title entry-option-title-custom">Scotch.io</b>
+      <b class="title entry-option-title-comment" i18n="">Leave a blog post comment</b>
+      <b class="title entry-option-title-fbvisit" i18n="">Visit Scotch.io on Facebook</b>
+
+      <span class="hidden" data-visible="complete">
+        <div class="opt-tmrw hidden" data-visible="daily" i18n="">
+          Do this again tomorrow for more entries!
+        </div>
+      </span>
+    </div>
+
+    <div class="entry-option-arrow visible" data-hidden="complete" data-svg="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M15.324 14.345l-4.124 5.133 14.46 15.16 14.457-15.305-4.12-5.132-10.337 11.016z"></path></svg></div>
+  </li><li class="entry-option  incomplete visible tooltip-parent" data-visible="show" data-index="2" class-if="complete incomplete submitting" on-click="enter" hover-var="hover">
+
+    <span class="tooltip tooltip-orient-above visible" tooltip="orientation=above&amp;timeout=100" data-visible="incomplete_and_singular" i18n="">
+      Click to submit 1 entry
+    </span>
+    <span class="tooltip tooltip-orient-above hidden" tooltip="orientation=above&amp;timeout=100" data-visible="incomplete_and_plural" i18n="">
+      Click to submit 1 entries
+    </span>
+
+    <div class="entry-option-score max-5" keep-if="!complete">
+        <b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar filled">
+            &nbsp;
+        </b>
+    </div>
+
+    
+
+    <span class="entry-option-checkmark hidden" data-visible="complete">&#10004;&nbsp;&nbsp;</span>
+
+    <div class=" entry-option-title mode-twfollow">
+      <b class="title entry-option-title-facebook" i18n="">Like  on Facebook</b>
+      <b class="title entry-option-title-fblike" i18n="">Easy entry for fans of this blog post</b>
+      <b class="title entry-option-title-twitter" i18n="">Tweet about the giveaway</b>
+      <b class="title entry-option-title-twfollow" i18n="">Follow @scotch_io on Twitter</b>
+      <b class="title entry-option-title-pinfollow" i18n="">Follow  on Pinterest</b>
+      <b class="title entry-option-title-pinit" i18n="">Pin this image on Pinterest</b>
+      <b class="title entry-option-title-emlist" i18n="">Join the  mailing list</b>
+      <b class="title entry-option-title-poll"></b>
+      <b class="title entry-option-title-custom"></b>
+      <b class="title entry-option-title-comment" i18n="">Leave a blog post comment</b>
+      <b class="title entry-option-title-fbvisit" i18n="">Visit  on Facebook</b>
+
+      <span class="hidden" data-visible="complete">
+        <div class="opt-tmrw hidden" data-visible="daily" i18n="">
+          Do this again tomorrow for more entries!
+        </div>
+      </span>
+    </div>
+
+    <div class="entry-option-arrow visible" data-hidden="complete" data-svg="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M15.324 14.345l-4.124 5.133 14.46 15.16 14.457-15.305-4.12-5.132-10.337 11.016z"></path></svg></div>
+  </li><li class="entry-option  incomplete visible tooltip-parent" data-visible="show" data-index="3" class-if="complete incomplete submitting" on-click="enter" hover-var="hover">
+
+    <span class="tooltip tooltip-orient-above visible" tooltip="orientation=above&amp;timeout=100" data-visible="incomplete_and_singular" i18n="">
+      Click to submit 1 entry
+    </span>
+    <span class="tooltip tooltip-orient-above hidden" tooltip="orientation=above&amp;timeout=100" data-visible="incomplete_and_plural" i18n="">
+      Click to submit 1 entries
+    </span>
+
+    <div class="entry-option-score max-5" keep-if="!complete">
+        <b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar empty">
+            &nbsp;
+        </b><b class="entry-option-score-bar filled">
+            &nbsp;
+        </b>
+    </div>
+
+    
+
+    <span class="entry-option-checkmark hidden" data-visible="complete">&#10004;&nbsp;&nbsp;</span>
+
+    <div class=" entry-option-title mode-comment">
+      <b class="title entry-option-title-facebook" i18n="">Like  on Facebook</b>
+      <b class="title entry-option-title-fblike" i18n="">Easy entry for fans of this blog post</b>
+      <b class="title entry-option-title-twitter" i18n="">Tweet about the giveaway</b>
+      <b class="title entry-option-title-twfollow" i18n="">Follow  on Twitter</b>
+      <b class="title entry-option-title-pinfollow" i18n="">Follow  on Pinterest</b>
+      <b class="title entry-option-title-pinit" i18n="">Pin this image on Pinterest</b>
+      <b class="title entry-option-title-emlist" i18n="">Join the  mailing list</b>
+      <b class="title entry-option-title-poll"></b>
+      <b class="title entry-option-title-custom"></b>
+      <b class="title entry-option-title-comment" i18n="">Leave a blog post comment</b>
+      <b class="title entry-option-title-fbvisit" i18n="">Visit  on Facebook</b>
+
+      <span class="hidden" data-visible="complete">
+        <div class="opt-tmrw hidden" data-visible="daily" i18n="">
+          Do this again tomorrow for more entries!
+        </div>
+      </span>
+    </div>
+
+    <div class="entry-option-arrow visible" data-hidden="complete" data-svg="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M15.324 14.345l-4.124 5.133 14.46 15.16 14.457-15.305-4.12-5.132-10.337 11.016z"></path></svg></div>
+  </li>
+</ul>
+
+        <div class="earn-more hidden" data-visible="show_box">
+  <strong class="earn-boost visible" data-visible="plural_optpts" i18n="">
+    Unlock bonus entries &amp; boost your chances!
+  </strong>
+
+  <p class="earn-pts visible" data-hidden="plural_mandopts">
+    <span class="visible" data-visible="plural_optpts" i18n="">Earn up to 8 more points by finishing the entry above.</span>
+    <span class="hidden" data-hidden="plural_optpts" i18n="">Earn another point by finishing the entry above.</span>
+  </p>
+
+  <p class="earn-pts hidden" data-visible="plural_mandopts">
+    <span class="visible" data-visible="plural_optpts" i18n="">Earn up to 8 more points by finishing the entries above.</span>
+    <span class="hidden" data-hidden="plural_optpts" i18n="">Earn another point by finishing the entries above.</span>
+  </p>
+</div>
+    </div>
+
+    <div class="visible" data-visible="page.closed">
+        <div id="page-closed">
+  <strong keep-if="late" i18n="">This contest is no longer accepting entries.</strong>
+  
+</div>
+    </div>
+
+    <div class="hidden" data-visible="page.winners">
+        <div id="page-winners">
+  <div id="winner-list" class-if="plural">
+    <h2 class="winners-title visible" data-hidden="plural"><span i18n="">And the winner is...</span></h2>
+    <h2 class="winners-title hidden" data-visible="plural"><span i18n="">And the winners are...</span></h2>
+
+    <small class="randomorg"><span i18n="">results powered by</span> <a target="_blank" href="http://www.random.org/clients/http/">Random.org</a></small>
+
+    <div class="winner-listing v2">
+        <div class="winner-avatar-frame" keep-if="imgurl">
+            <img src="main_data/909e0d1f234e746b8b73da9e99b06aea.jpg" class="winner-avatar" data-src="imgurl">
+        </div>
+
+        <span class="winner-name">Jarno</span>
+    </div>
+
+  </div>
+
+  <div id="ads" keep-if="show_ads">
+    <p class="ad" id="cta-pub">
+      <span i18n="">Do you run giveaways, too?</span>
+      <a target="_blank" class="rcta-btn" href="http://www.rafflecopter.com/try-rafflecopter?utm_campaign=tryrafflecopter&amp;utm_medium=8a8bf3a26&amp;utm_source=widget" i18n="">Try Rafflecopter!</a>
+      <span i18n="">It's free.</span>
+    </p>
+  </div>
+</div>
+    </div>
+
+    <p partial-terms=""></p>
+</div>
+
+        <a href="https://www.rafflecopter.com/try-rafflecopter?utm_campaign=poweredbyRC&amp;utm_medium=8a8bf3a26&amp;utm_source=widget" class="rafl-powered visible" target="_blank" data-href="link" data-visible="show_footer">
+  <span class="visible" data-hidden="custom">
+    <span i18n="">powered by Rafflecopter</span>
+    <span class="icon-sprocket" data-svg="icon_sprocket"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="10"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.31 4.19l.26-1.63 1.66.26-.26 1.44-1.66-.07zm2.51.27l.36-1.44 1.36.27-.18 1.53-1.36-.26z"></path><path d="M9.96 4.98c-.15.65-.63 1.43-1.03 1.82-.39.39-.89.67-1.47.83-.58.17-1.15.2-1.69.09-.54-.1-1.06-.34-1.55-.71-.49-.37-1.03-.81-1.27-1.32s-.54-1.16-.46-1.83l.52.11c-.04.5.44.75.66 1.16.21.41.51.76.91 1.04.39.29.83.48 1.31.57.49.1.97.08 1.43-.04.47-.12.87-.33 1.2-.64.34-.3.58-.69.71-1.18l.53.1h.2z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M.18 3.87l.44 1.84-.44-1.84zm1.71 1.77l-1.49-.58.07-.43 1.49.57-.07.44zm-1.46.09l-.43-1.84.25-.04.43 1.84m7.95 4.31l-.23-.09.73-1.03.23.09m-.17-.05l-.73 1.04m.24-.2l-6.05-1.22.06-.33 6.05 1.21m4.18-6.42l-12.54-2.58.06-.42 12.54 2.58"></path></svg></span>
+  </span>
+  <span class="hidden" data-visible="custom">
+    <span class="hidden" data-visible="custom_text" data-text="custom_text"></span>
+    <img src="main.htm" class="custom-img hidden" data-visible="custom_img" data-src="custom_img">
+  </span>
+</a>
+    </div>
+
+    <div style="top:2px;left:2px;" id="entry-form-modal" class="modal hidden" data-visible="visible" data-style="top:2px;left:2px;">
+    <form class="entry-form" method="POST" on-submit="submit">
+        <div partial="type"></div>
+
+        <p class="accept-tc-message" on-click="toggleTerms"><span>&#10004;&nbsp;</span><span i18n=""><span>By submitting, I agree to the </span><a href="#" class="toggle-tc-full">Terms &amp; Conditions</a></span></p>
+
+        <div id="entry-form-controls" class="form-controls">
+            <a href="#" class="cancel" on-click="close" i18n="">Cancel</a>
+
+            <a title="Click to submit 0 undefined" href="#" class="submit-link mode- " class-if="disabled(force_disable_submit)" on-click="submit" data-title="Click to submit 0 ">
+                <b class="btn submit-link-facebook" i18n="">I'm a Fan!</b>
+                <b class="btn submit-link-fbvisit" i18n="">I Visited!</b>
+                <b class="btn submit-link-fblike" i18n="">I Liked It!</b>
+                <b class="btn submit-link-twitter" i18n="">I Tweeted!</b>
+                <b class="btn submit-link-twfollow" i18n="">I Follow!</b>
+                <b class="btn submit-link-pinfollow" i18n="">I Follow!</b>
+                <b class="btn submit-link-pinit" i18n="">I Pinned It!</b>
+                <b class="btn submit-link-emlist" i18n="">Enter!</b>
+                <b class="btn submit-link-rss" i18n="">I Subscribed!</b>
+                <b class="btn submit-link-refer" i18n="">OK!</b>
+                <b class="btn submit-link-poll" i18n="">Enter!</b>
+                <b class="btn submit-link-custom" i18n="">Enter!</b>
+                <b class="btn submit-link-comment" i18n="">I Commented!</b>
+            </a>
+        </div>
+
+        <div class="accept-tc">
+  <div class="accept-tc-full hidden" data-ie-html="&lt;p&gt;&lt;/p&gt;&lt;br /&gt;" data-visible="show_terms"><p></p><br></div>
+<p></p></div>
+
+        <div class="failed hidden" data-visible="failed">
+            <span i18n="">Aw, shucks. We didn't get your entry.</span>
+            <i i18n="">Plz try again.</i>
+        </div>
+    </form>
+</div>
+    <div id="emlogin" class="modal hidden" data-visible="visible">
+    <h2 i18n="">Log In with Your Email Address</h2>
+
+    <form id="emlogin-form" on-submit="login">
+      <fieldset>
+        <div class="form-input">
+          <label i18n=""><em>What's your</em>&nbsp;<strong>name</strong>?</label>
+          <input class="text" name="name" placeholder="John Doe" type="text">
+          <div class="err-label hidden" data-visible="errors.name"><span i18n="">Name is required.</span></div>
+        </div>
+
+        <div class="form-input">
+          <label i18n=""><em>What's your</em>&nbsp;<strong>email address</strong>?</label>
+          <input class="text" name="email" placeholder="you@domain.com" type="email">
+          <div class="err-label hidden" data-visible="errors.email"><span i18n="">A valid email is required.</span></div>
+        </div>
+      </fieldset>
+
+      <div id="emlogin-controls" class="form-controls" autocomplete="on">
+        <div class="err-label hidden" data-visible="errors.other"><span i18n="">An unknown error occurred. Try again.</span></div>
+
+        <a href="#" class="cancel" on-click="cancel" i18n="">Cancel</a>
+
+        <input style="display:none;" type="submit">
+        <a href="#" class="submit" on-click="login"><span i18n="">Log In</span></a>
+      </div>
+    </form>
+</div>
+
+    <div google-analytics="config.google_analytics_id"></div>
+</div></body></html>

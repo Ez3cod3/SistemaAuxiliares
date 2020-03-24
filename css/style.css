@@ -1,0 +1,90 @@
+/**
+ * 	CSS3 Only Horizontal and Vertical Accordion
+ * 	Author: Paul Underwood for Hongkiat.com
+ *  Website: www.paulund.co.uk
+ *  Date: 27/11/11
+ *  Version: 1.0
+ */
+
+ 
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+body, button, input, select, textarea { font-family: sans-serif; color:#111111; }/*titulo CSS3 Only Accordion Examples*/
+
+/*Define Accordion box*/
+.accordion { width:1030px; overflow:hidden; margin:10px auto; color:	#ffb6c1; background:#555555; padding:10px; } /*backgorund:color de fondo de los acordeones; Color*/
+
+/*General Accordion****************************************************************************/
+/*Set style of open slide*/
+.accordion section:target { background:#ffb6c1; padding:10px;}/*Da color a fondo de acordeon seleccionado*/
+.accordion section:target:hover { background:#00ffff; }/*da color cuando el mouse esta ensima del acordeon seleccionado*/
+.accordion section:target h2 {width:100%;}
+.accordion section:target h2 a{ color:#333333; padding:0;}/*titulo dentro de acordeon Contact*/
+.accordion section:target p {display:block;}
+.accordion section h2 a{padding:8px 10px;display:block; font-size:16px; font-weight:normal;color:#333333; text-decoration:none; }/*Color al titulo de acordeon*/
+
+/*set style of closed slide*/
+.accordion section{ float:left;	overflow:hidden; color:#808080; cursor:pointer; background: #00ffff; margin:3px; }/*Color1 a las letras dentrodel acordeon  background color a los acordeones */
+.accordion section:hover {background:#ffb6c1;}/*COlor cuando se pasa el mouse en sobre acordeones*/
+.accordion section p { display:none; }
+.accordion section:after{position:relative;font-size:24px;color:#00ff00;font-weight:bold;} /*Color a los numeros de los acordeones*/
+.accordion section:nth-child(1):after{content:'1';}
+.accordion section:nth-child(2):after{content:'2';}
+.accordion section:nth-child(3):after{content:'3';}
+.accordion section:nth-child(4):after{content:'4';}
+.accordion section:nth-child(5):after{content:'5';}
+/*End General Accordion****************************************************************************/
+
+/*Horizontal Accordion *********************************************************************/
+.horizontal section{ width:5%; height:250px; 
+	-moz-transition:width 0.2s ease-out; 
+	-webkit-transition:width 0.2s ease-out;
+  	-o-transition:width 0.2s ease-out;
+	-ms-transition:width 0.2s ease-out;
+  	transition:width 0.2s ease-out;
+}
+
+/*Position the number of the slide*/
+.horizontal section:after{top:140px;left:15px;}
+
+/*Header of closed slide*/
+.horizontal section h2 { 
+	-webkit-transform:rotate(90deg);
+	-moz-transform:rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	width:240px; position:relative; left:-100px; top:85px;
+} 
+
+/*On mouse over open slide*/
+.horizontal :target{ width:93%;height:230px; }
+.horizontal :target h2{ top:0px;left:0;
+	-webkit-transform:rotate(0deg);
+	-moz-transform:rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg); 
+}
+/*End Horizontal Accordion *********************************************************************/
+
+/*Vertical Accordion *************************************************************************/
+.vertical section{ width:100%; height:40px;
+	-webkit-transition:height 0.2s ease-out;
+	-moz-transition:height 0.2s ease-out;
+  	-o-transition:height 0.2s ease-out;
+	-ms-transition:height 0.2s ease-out;
+  	transition:height 0.2s ease-out;
+}
+/*Set height of the slide*/
+.vertical :target{ height:350px; width:97%; }
+
+/*.vertical section h2 { position:relative; left:0; top:-15px; }*/
+
+/*Set position of the number on the slide*/
+.vertical section:after{ top:-60px;left:910px;}
+.vertical section:target:after{ left:-9999px;}

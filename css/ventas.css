@@ -1,0 +1,94 @@
+
+/* Estilos para la cabecera del Itinerario*/
+.cabecera_ite{
+	border-radius: 5px;
+	padding: 4px;
+    
+}
+h5{
+	color: #5190FF;
+	font-size : 13px;
+	font-weight: bold;
+	font-family:algerian;
+}
+.sep{
+	background-color: #5190FF;
+	width:100%;
+	height:2px;
+}
+.subcabecera{
+	border-radius: 10px;
+	padding: 4px;
+	background-color : #CEE3F6;
+	border:2px solid #5190FF;
+}
+td{
+	align:center;
+}
+td.info{
+
+	background: url('../img/asiento.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	border: red 1px solid;	
+}
+td.danger{
+
+	background: url('../img/asiento.png');
+	background-repeat: no-repeat;
+	background-position: center;	
+}
+td.warning{
+
+	background: url('../img/asiento.png');
+	background-repeat: no-repeat;
+	background-position: center;	
+}
+td.planilla{
+
+	background: url('../img/planilla.png');
+	background-repeat: no-repeat;
+	background-position: center;	
+}
+.caja_planilla{
+	border:1px solid #03A906;
+	background: url("../img/planilla.png");
+	width: 80px;
+	height: 80px;
+	padding-right: 40px;
+}
+.titulo_aviso{
+
+   font-weight: bold;
+   margin-bottom: 1px;
+   margin-left: 1px;
+   margin-right: 1px;
+   margin-top: 1px;
+   padding:4px;
+   text-align: left;
+}
+
+.subtitulo_aviso{
+   text-align: left;
+   background-color: #f1f1f1;
+   margin-bottom: 1px;
+   margin-left: 1px;
+   margin-right: 1px;
+   margin-top: 1px;
+   padding:4px;
+}
+
+.letra_aviso{
+   margin-bottom: 2px;
+   margin-left: 2px;
+   margin-right: 2px;
+   margin-top: 2px;
+   padding: 4px;
+    text-align: left  ;
+}
+
+.pie_aviso{
+   border-top: 1px solid #f6f6f6;
+   padding: 4px 4px 0px 4px;
+   color: #317EAC;
+}

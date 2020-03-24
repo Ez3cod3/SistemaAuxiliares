@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html itemscope itemtype="http://schema.org/Article" id="ie6" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 7 ]>   <html itemscope itemtype="http://schema.org/Article" id="ie7" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 8 ]>   <html itemscope itemtype="http://schema.org/Article" id="ie8" class="ie ie-old" lang="en-US"><![endif]-->
+<!--[if IE 9 ]>   <html itemscope itemtype="http://schema.org/Article" id="ie9" class="ie" lang="en-US"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="wf-acuminpro-i3-active wf-acuminpro-i4-active wf-acuminpro-i7-active wf-acuminpro-n3-active wf-acuminpro-n4-active wf-acuminpro-n7-active wf-lato-i4-active wf-lato-i7-active wf-lato-n4-active wf-lato-n7-active wf-sourcecodepro-i4-active wf-sourcecodepro-n4-active wf-active" itemscope="" itemtype="http://schema.org/Article" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+ 
+<meta charset="utf-8">
+ 
+<title>Create Your First Mobile App with AngularJS and Ionic | Scotch</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="google-site-verification" content="NoKkRtzSguNO3Xd1cuhpVkUoh7n8mz-aofV9Ch4aS8w">
+<meta name="theme-color" content="#222222">
+ 
+<script data-rocketoptimized="true" data-rocketsrc="//www.google-analytics.com/analytics.js" async=""></script><script data-rocketoptimized="true" data-rocketsrc="https://pagead2.googlesyndication.com/pub-config/r20160212/ca-pub-4625466825098355.js"></script><script src="Angular_files/fbevents.js" async=""></script><script src="Angular_files/conversion_async.js" async="" type="text/javascript"></script><script src="Angular_files/load.js"></script><script src="Angular_files/gtm.js" async=""></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1464195350,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"32916570a99fd245e44283bb7605180e",petok:"f20d4a793fc223037b9bb7ec2f6f67eaa48b5c36-1464237055-86400",zone:"scotch.io",rocket:"m",apps:{},sha2test:0}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=e982913d31/cloudflare.min.js"><'+'\/script>');}}catch(e){};
+//]]>
+</script><script type="text/javascript" src="Angular_files/cloudflare.js"></script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style><script data-module="cloudflare/rocket" id="cfjs_block_2839d1c21c" onload="CloudFlare.__cfjs_block_2839d1c21c_load()" onerror="CloudFlare.__cfjs_block_2839d1c21c_error()" onreadystatechange="CloudFlare.__cfjs_block_2839d1c21c_readystatechange()" type="text/javascript" src="Angular_files/rocket.js"></script>
+<link rel="alternate" type="application/rss+xml" title="Scotch ♥ Developers bringing fire to the people." href="https://scotch.io/feed">
+ 
+<link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64 96x96" href="https://scotch.io/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-57.png">
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-76.png">
+<link rel="apple-touch-icon" sizes="96x96" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-96.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-180.png">
+<link rel="apple-touch-icon" sizes="192x192" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-192.png">
+<link rel="apple-touch-icon" sizes="194x194" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-194.png">
+<link rel="apple-touch-icon" sizes="228x228" href="https://scotch.io/wp-content/themes/scotchpress/img/favicons/favicon-228.png">
+<meta name="application-name" content="Scotch">
+<meta name="msapplication-TileImage" content="/wp-content/themes/scotchpress/img/favicons/favicon-144.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+ 
+ 
+<meta name="author" content="chris92">
+<meta name="description" content="The Scotchmas Day 4 giveaway can be found at the end of this article.In the past years, making a mobile app involved being...">
+<link rel="canonical" href="Angular_files/create-your-first-mobile-app-with-angularjs-and-ionic_003.htm">
+ 
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@scotch_io">
+<meta name="twitter:creator" content="chrizt_n">
+<meta name="twitter:title" content="Create Your First Mobile App with AngularJS and Ionic">
+<meta name="twitter:url" content="https://scotch.io/tutorials/create-your-first-mobile-app-with-angularjs-and-ionic">
+<meta name="twitter:description" content="The Scotchmas Day 4 giveaway can be found at the end of this article.In the past years, making a mobile app involved being...">
+<meta name="twitter:image:src" content="https://scotch.io/wp-content/uploads/2015/11/build-a-todo-app-with-angular-ionic.png">
+ 
+<meta property="fb:admins" content="579622216,709634581">
+<meta property="fb:app_id" content="1389892087910588">
+<meta property="og:url" content="https://scotch.io/tutorials/create-your-first-mobile-app-with-angularjs-and-ionic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Create Your First Mobile App with AngularJS and Ionic">
+<meta property="og:image" content="https://scotch.io/wp-content/uploads/2015/11/build-a-todo-app-with-angular-ionic.png">
+<meta property="og:description" content="The Scotchmas Day 4 giveaway can be found at the end of this article.In the past years, making a mobile app involved being...">
+<meta property="og:site_name" content="Scotch">
+<meta property="article:author" content="nwambachristian">
+<meta property="article:publisher" content="https://www.facebook.com/scotchdevelopment">
+ 
+<meta itemprop="name" content="Create Your First Mobile App with AngularJS and Ionic">
+<meta itemprop="description" content="The Scotchmas Day 4 giveaway can be found at the end of this article. In the past years, making a mobile app involved being good with the native language you are creating an app for. That means Objective C for iOS, Java for Android, and C# for Windows Phone. That is so demoralizing to have […]">
+<meta itemprop="image" content="https://scotch.io/wp-content/uploads/2015/11/build-a-todo-app-with-angular-ionic.png">
+ 
+<script src="Angular_files/hto5pnv.js"></script>
+<style type="text/css">.tk-lato{font-family:"lato",sans-serif;}.tk-source-code-pro{font-family:"source-code-pro",sans-serif;}.tk-acumin-pro{font-family:"acumin-pro",sans-serif;}</style><link media="all" href="Angular_files/l.css" rel="stylesheet"><script>try{Typekit.load({ async: false });}catch(e){}</script>
+<link rel="stylesheet" href="Angular_files/style.css">
+ 
+<script>var disqus_shortname = 'scotchwebdevelopment';</script>
+<script src="Angular_files/count-data.js"></script><script async="async" data-rocketoptimized="true" data-rocketsrc="//s3.buysellads.com/r/s_8321ee0e3825ae084dc5408db80d21db.js?v=1464235200000" id="_bsap_js_8321ee0e3825ae084dc5408db80d21db" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="https://stats.buysellads.com/country.php" type="text/javascript"></script><script data-rocketoptimized="true" data-rocketsrc="https://stats.buysellads.com/country.php" type="text/javascript"></script><script id="_bsap_premium_pro" data-rocketoptimized="true" data-rocketsrc="//s3.buysellads.com/ac/pro.js" type="text/javascript"></script><script async="async" data-rocketoptimized="true" data-rocketsrc="//srv.buysellads.com/ads/get/ids/CAAIP2T;CA7D52E/?r=1464235200000" id="_bsaPRO_js" type="text/javascript"></script></head>
+<body class="single single-post postid-11833 single-format-standard">
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WZL83C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WZL83C');</script>
+<div class="site-wrap">
+<div class="site-canvas">
+<div class="site-side">
+<div class="scotch-logos">
+<a href="https://scotch.io/">
+<img src="Angular_files/logo-large.png" class="img-responsive">
+<h1>scotch.io</h1>
+<p>code on the rocks</p>
+</a>
+</div>
+<nav class="side-nav">
+<ul class="list-unstyled nav-text">
+<li class="divider">Learn</li>
+<li><a href="https://scotch.io/tutorials" class="tutorials">Tutorials</a></li>
+<li><a href="https://scotch.io/bar-talk">Bar Talk</a></li>
+<li><a href="https://pub.scotch.io/">Community</a></li>
+<li class="divider"><a href="https://school.scotch.io/">
+<span class="iconic iconic-monitor"></span>
+Scotch School
+</a></li>
+<li class="divider">Our Stuff</li>
+<li><a href="https://scotch.io/about">About</a></li>
+<li><a id="shop-link" href="http://shop.scotch.io/">Shop</a></li>
+<li><a id="slack-link" href="http://slack.scotch.io/">Join Us On Slack</a></li>
+<li><a id="digital-link" href="http://digital.scotch.io/">Hire Us</a></li>
+</ul>
+</nav>
+</div> <header class="site-header">
+<div class="banner">
+<div class="family-dropdown hidden-lg">
+<a href="https://scotch.io/" class="brand magazine current">
+<span class="logo-img"></span>
+<span class="text">
+<span class="logo-img-text"></span>
+</span>
+</a>
+<a href="#" class="toggle-family">
+<span class="left"></span>
+<span class="right"></span>
+</a>
+<div class="siblings">
+<a href="https://pub.scotch.io/" class="brand the-pub">
+<span class="logo-img"></span>
+<span class="text">
+<span class="logo-img-text"></span>
+</span>
+</a>
+<a href="https://school.scotch.io/" class="brand school">
+<span class="logo-img"></span>
+<span class="text">
+<span class="logo-img-text"></span>
+</span>
+</a>
+</div>
+</div>
+<nav class="main-nav hidden-lg">
+<ul>
+<li>
+<a href="https://scotch.io/tutorials" class="tutorials">
+<span class="iconic iconic-code"></span>
+Tutorials
+</a>
+</li>
+<li>
+<a href="https://scotch.io/bar-talk">
+<span class="iconic iconic-pencil"></span>
+Bar Talk
+</a>
+</li>
+<li class="visible-lg">
+<a href="https://pub.scotch.io/">
+<span class="iconic iconic-people"></span>
+Community Posts
+</a>
+ 
+</li><li class="visible-lg">
+<a href="https://school.scotch.io/">
+<span class="iconic iconic-monitor"></span>
+Scotch School
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<nav class="fancy-grid-links tutorial-links">
+<ul>
+<li>
+<a href="https://scotch.io/tag/vue-js" class="vue">
+<div class="fancy-logo"></div>
+<span>Vue.js</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/react" class="react">
+<div class="fancy-logo"></div>
+<span>React</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/angular-js" class="angular">
+<div class="fancy-logo"></div>
+<span>Angular</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/node-js" class="node">
+<div class="fancy-logo"></div>
+<span>Node</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/laravel" class="laravel">
+<div class="fancy-logo"></div>
+<span>Laravel</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/mean" class="mean">
+<div class="fancy-logo"></div>
+<span>MEAN</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/css" class="css">
+<div class="fancy-logo"></div>
+<span>CSS</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/bootstrap" class="bootstrap">
+<div class="fancy-logo"></div>
+<span>Bootstrap</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/sublime-text" class="sublime-text">
+<div class="fancy-logo"></div>
+<span>Sublime Text</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/gulp,bower,docker,elixir,git,grunt,vagrant" class="dev-tools">
+<div class="fancy-logo"></div>
+<span>Dev Tools</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/foundation" class="foundation">
+<div class="fancy-logo"></div>
+<span>Foundation</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/wordpress" class="wordpress">
+<div class="fancy-logo"></div>
+<span>WordPress</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/less" class="less">
+<div class="fancy-logo"></div>
+<span>LESS</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/sass" class="sass">
+<div class="fancy-logo"></div>
+<span>Sass</span>
+</a>
+</li>
+<li>
+<a href="https://scotch.io/tag/javascript" class="javascript">
+<div class="fancy-logo"></div>
+<span>JavaScript</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<div class="super-search">
+<a href="#" class="toggle-super-search">
+<span class="iconic iconic iconic-x-thin"></span>
+</a>
+<form id="search-form" role="search" action="https://search.scotch.io/" method="GET">
+<input id="search-input" name="query" placeholder="Search Scotch for Cool Stuff" autocomplete="off" type="search">
+<div class="wrap">
+<button type="submit">
+<span class="iconic iconic-magnifying-glass"></span>
+</button>
+</div>
+</form>
+<div class="quick-links">
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-4 group">
+<div class="button-list">
+<h4 class="hidden"><span class="iconic iconic-heart"></span> From Scotch.io</h4>
+<ul id="primary-search-list">
+</ul>
+</div>
+</div>
+<div class="col-sm-4 group">
+<div class="button-list">
+<h4 class="hidden"><span class="iconic iconic-pencil"></span> From The Pub</h4>
+<ul id="secondary-search-list">
+</ul>
+</div>
+</div>
+<div class="col-sm-4 group">
+<div class="button-list">
+<h4 class="hidden"><span class="iconic iconic-fire"></span> What's Hot</h4>
+<ul id="tertiary-search-list">
+</ul>
+</div>
+</div>
+</div>
+</div>
+<ul id="search-item-placeholder" class="hidden">
+<li>
+<a href="#" class="squared has-image">
+<span class="img"></span>
+<span class="spoofer">Getting Started with Vue.js</span>
+<span class="visible">Getting Started with Vue.js</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<nav class="misc-nav">
+<ul class="list-inline">
+<li class="hidden-xs hidden-sm login-link"><a href="#login-modal" class="open-login-popup" data-effect="mfp-zoom-in">Login / Sign Up</a></li>
+<li class="hidden-xs hidden-sm write-link"><a href="https://pub.scotch.io/" class="visible-lg">Write a Post</a></li>
+<li>
+<a href="#" class="toggle-misc-nav">
+<span class="text">More</span>
+<span class="icon iconic iconic-grid-two-up"></span>
+</a>
+</li>
+</ul>
+</nav>
+<main>
+<div class="single-top-scotcherisment">
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-4625466825098355" data-ad-slot="2772961029"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="970"></iframe></ins></ins></ins>
+<script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+<article style="min-height: 27149px;" class="">
+<div class="container">
+<div class="single-wrap">
+<div class="inner-guts guts no-top-margin ">
+<div class="featured-image-guts">
+<img src="Angular_files/build-a-todo-app-with-angular-ionic.png">
+</div>
+<div class="row">
+<div class="col-md-12">
+<aside class="top">
+<div class="tags">
+<a href="https://scotch.io/tag/angular-js">angularJS</a>
+<a href="https://scotch.io/tag/ionic">ionic</a>
+</div>
+</aside>
+<header>
+<h1 itemprop="headline">Create Your First Mobile App with AngularJS and Ionic</h1>
+</header>
+<aside class="bottom">
+<div class="author">
+<a href="https://scotch.io/author/chris92" class="profile-spot no-border">
+<span class="img" style="background-image: url('//gravatar.com/avatar/ffeece649256f09f8d52ebc17a8cc5e3?s=200&amp;d=https%3A%2F%2Fscotch.io%2Fwp-content%2Fthemes%2Fscotchpress%2Fimg%2Flogo-large.png');"></span>
+</a>
+</div>
+<div class="meta-info">
+<a href="https://scotch.io/author/chris92" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+<span itemprop="name">Chris Nwamba</span>
+</a>
+<span class="separator"></span>
+<span>Dec 17, 2015</span>
+<span class="separator"></span>
+<a href="https://scotch.io/tutorials">Tutorials</a>
+<span class="separator"></span>
+<a href="https://scotch.io/tutorials/create-your-first-mobile-app-with-angularjs-and-ionic#disqus_thread">79 Comments</a>
+</div>
+<div class="hotness hint--top" data-segment="create-your-first-mobile-app-with-angularjs-and-ionic" data-hint="Approximate Love">
+<span class="count" id="update-counter">112,662</span>
+<span class="iconic iconic-fire"></span>
+</div>
+</aside>
+<div class="scotcherisment">
+<div data-serve="CAAIP2T" id="bsap_1300582" class="bsap bsap_1300582">
+<style type="text/css">
+div.bsap_1300582{width:100%;display:block;}div.bsap_1300582 a{width:728px;}div.bsap_1300582 a img{padding:0;}div.bsap_1300582 a em{font-style:normal;}div.bsap_1300582 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1300582 img{border:0;clear:right;}
+div.bsap_1300582 a.adhere{display:block;color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;margin-top:8px !important;}
+div.bsap_1300582 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}
+div.bsap_1300582 iframe{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1300582 a{line-height:100%;}div.bsap_1300582 a.adhere{width:728px;height:90px;line-height:720%;}html>body div.bsap_1300582 a.adhere{width:726px;height:88px;}div.bsap_1300582 img.s{height:0;width:0;}div.bsap_1300582{line-height:9px;}div.bsap_1300582 .bsap_adhere2,div.bsap_1300582 iframe{float:left;}div.bsap_1300582 .bsap_adhere2 a{height:90px;width:20px;background:url(http:\/\/s3.buysellads.com\/ac\/ah20x90_1.gif) no-repeat 0 0;text-indent:-9999px;}
+</style>
+<a href="https://srv.buysellads.com/ads/click/x/GTND423NCE7DCKJ7C6B4YKQWCYBD62QICAAI4Z3JCESDVKJUC6BIL23KC6BDK23LCKBI6K3EHJNCLSIZ" class="ad0 odd " title="Moltin - eCommerce API for developers" id="bsa_6645250" target="_blank" rel="nofollow">
+<img src="Angular_files/6645250-1459263568.png" alt="" height="90" width="728"></a>
+
+<div class="bsap_adhere">
+
+<a href="http://www.buysellads.com/buy/detail/219041/zone/1300582?utm_source=site_219041&amp;utm_medium=website&amp;utm_campaign=imagetext&amp;utm_content=zone_1300582" class="">Advertise Here</a>
+
+</div>
+
+
+<script class="ignoreme" id="auto_1" type="text/javascript"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+</div>
+<div class="content">
+<p>The <a href="#scotchmas-giveaway-day-4">Scotchmas Day 4</a> giveaway can be found at the end of this article.</p>
+<p>In the past years, making a mobile app involved being good with the 
+native language you are creating an app for. That means Objective C for 
+iOS, Java for Android, and C# for Windows Phone. That is so demoralizing
+ to have to learn all those technologies.</p>
+<blockquote>
+<p>My dreams of being a mobile app developer became a reality after I 
+realized I could actually create mobile apps using the skills I had that
+ were web technologies.</p>
+</blockquote>
+<p><a href="http://cordova.apache.org/">Cordova</a> is a game changer. 
+With it you can target multiple platforms with one code base. All you 
+need to learn is the usual HTML, CSS and JavaScript used for web 
+development and by reading some Cordova docs, you are already to become a
+ mobile developer.</p>
+<h2 id="what-really-is-ionic"><a href="#what-really-is-ionic"><span class="icon">#</span> What Really is Ionic?</a></h2>
+<blockquote>
+<p><a href="http://ionicframework.com/">Ionic</a> is a front-end SDK for
+ building cross-platform mobile apps. Built on top of Angular, Ionic 
+also provides a platform for integrating services like push 
+notifications and analytics.</p>
+</blockquote>
+<p><a href="https://scotch.io/wp-content/uploads/2015/11/Ionic_Logo.svg_.png"><img src="Angular_files/Ionic_Logo.png" alt="Ionic_Logo.svg" class="alignnone size-large wp-image-11879" height="417" width="1200"></a></p>
+<p>Ionic is not an alternative option to Cordova, but instead a UI 
+library to make a better Cordova project. Ionic can be compared to a 
+framework like Bootstrap or Foundation but this time for Mobile and not 
+Web.</p>
+<p>In this tutorial which has a nice demo, we will make a mobile app 
+using Ionic framework and Cordova. I will also explain how to build 
+mobile apps with Phonegap app so we won’t have to bother with installing
+ Platform SDKs.</p>
+<h3>What You Should Know</h3>
+<p>Fortunately you just need to understand the basics of JavaScript and its popular library <a href="https://angularjs.org/">AngularJS</a>. Ionic is completely made up of Angular directives and components and uses its popular ui router for SPA.</p>
+<p>Currently, Ionic works with Angular 1.0, but the <a href="http://blog.ionic.io/announcing-ionic-2-0-alpha/">Ionic 2 Alpha</a> that works with <a href="https://angular.io/">Angular 2</a> was announced.</p>
+<h2 id="setup-and-installation"><a href="#setup-and-installation"><span class="icon">#</span> Setup and Installation</a></h2>
+<p>These days it seems like everything now depends on Node to exist. 
+Ionic and Cordova are not exceptions. Installing Cordova or Ionic 
+requires <a href="https://nodejs.org/">Node</a> and npm installed on your machine. Run the following command after installing Node if you haven’t:</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">
+npm <span class="token function">install</span> -g cordova ionic
+</code></pre>
+<p>The <code>-g</code> flag installs both cordova and ionic globally so we can access it from any where in our machines. It also adds them to our <code>PATH</code> so it won’t be a surprise to our CLI. To confirm installation:</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">
+ioniv -v <span class="token operator">&amp;&amp;</span> cordova -v
+</code></pre>
+<h3>Creating a Project</h3>
+<p>A new project in ionic can be created using the <code>ionic</code> 
+CLI command. It will scaffold the app’s file and download it’s 
+dependencies. You can supply arguments to the CLI command to alter the 
+type of template generated.</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">
+ionic start <span class="token punctuation">{</span>appname<span class="token punctuation">}</span> <span class="token punctuation">{</span>template<span class="token punctuation">}</span>
+</code></pre>
+<p>That is the syntax for a new project in Ionic. The <code>appname</code> is any name of your choice and <code>template</code> is one of the Ionic supported template. It can also be a GitHub URL to a custom template.</p>
+<p>There is nothing wrong with tradition – let us create a Todo app to better see what Ionic is made of.</p>
+<h2 id="making-a-todo-app"><a href="#making-a-todo-app"><span class="icon">#</span> Making a Todo App</a></h2>
+<p>We can go ahead and create an app as seen in the previous section. So as usual, pick your favorite spot on you machine and run:</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">
+ionic start scotch-todo blank
+</code></pre>
+<p>We are using the <code>blank</code> template for simplicity in as much as we can use other types of templates like <code>tabs</code>, <code>sidemenus</code>, etc. The command will generate a new project for us and also install some dependencies.</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">
+├── hooks          // custom cordova hooks to execute on specific commands
+├── platforms      // iOS/Android specific builds will reside here
+├── plugins        // where your cordova/ionic plugins will be installed
+├── resources        // icon and splash <span class="token function">screen</span>
+├── scss           // scss code, <span class="token function">which</span> will output to www/css/
+<span class="token operator">|</span>── www         // application - JS code and libs, CSS, images, etc.
+     <span class="token operator">|</span>---------css                 //customs styles
+     <span class="token operator">|</span>---------img               //app images
+     <span class="token operator">|</span>---------js                  //angular app and custom JS
+     <span class="token operator">|</span>---------lib                //third party libraries
+     <span class="token operator">|</span>---------index.html  //app master page        
+├── bower.json     // bower dependencies
+├── config.xml     // cordova configuration
+├── gulpfile.js    // gulp tasks
+├── ionic.project  // ionic configuration
+├── package.json   // node dependencies
+</code></pre>
+<h3>Configuring Platforms</h3>
+<p>As we discussed, Cordova gives you the power to write once and run on
+ many platforms (iOS, Android, Blackberry, Windows, etc) but you have to
+ explicitly tell Cordova (with Ionic) which platform should be included 
+in a given project. For our Todo app, we will be trying with two 
+platforms (iOS and Android).</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">
+<span class="token function">cd</span> scotch-todo
+ionic platform add ios
+ionic platform add android
+</code></pre>
+<h3>Previewing the App</h3>
+<p>We can preview our app in the browser using Ionic. This is not 
+recommended though (about that later) but we can use it to preview (not 
+really test) our basic Todo application.</p>
+<p>To see what our blank app looks like, run the below command in the CLI on the <code>scotch-todo</code> directory:</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">
+ionic serve
+</code></pre>
+<p>The command will open up a browser at <code>http:localhost:8100</code>. The browser screen is too large to preview a mobile app and for that reason, Ionic added <code>--lab</code> as an option to running the app in the browser so as to preview the app better as it would be seen in Android and iOS.</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">
+ionic serve --lab
+</code></pre>
+<p><a href="https://scotch.io/wp-content/uploads/2015/11/ionic-serve.jpg"><img src="Angular_files/ionic-serve-1061x500.jpg" alt="ionic-serve" class="alignnone size-large wp-image-11884" height="500" width="1061"></a></p>
+<h2 id="building-out-the-real-stuff"><a href="#building-out-the-real-stuff"><span class="icon">#</span> Building Out the Real Stuff</a></h2>
+<p>Fine we have a good ionic app but then it is useless. We agreed on 
+making a Todo app not a blank app so let us complete the deal.</p>
+<p>Ionic is a basically a SPA web app, we need a master index.html 
+though we don’t need routes as the Todo app is just a one view app.</p>
+<p>We should first update our app’s <code>www/index.html</code> and <code>www/js/app.js</code> to make sure the structure looks like the one below.</p>
+<p><code>www/index.html</code></p>
+<pre data-title="" class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>initial-scale<span class="token punctuation">=</span>1, maximum-scale<span class="token punctuation">=</span>1, user-scalable<span class="token punctuation">=</span>no, width<span class="token punctuation">=</span>device-width<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lib/ionic/css/ionic.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>css/style.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- ionic/angularjs js --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lib/ionic/js/ionic.bundle.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!-- cordova script (this will be a 404 during development) --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cordova.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!-- your app's js --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>js/app.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment" spellcheck="true">&lt;!-- your app's js --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token attr-name">ng-app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scotch-todo<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ion-pane</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ion-header-bar</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bar-dark<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Scotch-Todo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ion-header-bar</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ion-content</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ion-content</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ion-pane</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p><code>www/js/app.js</code></p>
+<pre data-title="" class=" language-javascript"><code class=" language-javascript">
+<span class="token comment" spellcheck="true">//setup angular</span>
+<span class="token keyword">var</span> app <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">'scotch-todo'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'ionic'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Ionic creates a bundle of Angular and required dependencies 
+(angular-ui-router, angular-animate, angular-sanitize, etc) bundled in 
+one file as <code>ionic.bundle.js</code>.</p>
+<p>Those are the files we will work with throughout this tutorial. 
+Before continuing, let us define some tasks we need to complete in out 
+app so we don’t loose focus:</p>
+<ul>
+<li>Setup Local Storage service to store todo data </li>
+<li>Create a <code>main</code> controller to interact with our view </li>
+<li>Update our <code>index.html</code> to work with the controller </li>
+</ul>
+<h2 id="a-local-storage-service"><a href="#a-local-storage-service"><span class="icon">#</span> A Local Storage Service</a></h2>
+<p>HTML 5 which is ionic’s best friend comes with a lot of storage 
+options. Local Storage is one of them and it suits our app more because 
+of all the options provided, it has the ability to persist data even 
+when the browser or app is closed.</p>
+<p>Angular on the other hand has a service written to wrap the Local Storage API and is available on GitHub as <a href="https://github.com/grevory/angular-local-storage">angular-local-storage</a>. Fortunately, Ionic uses <a href="https://scotch.io/tutorials/manage-front-end-resources-with-bower">bower</a> to manage dependencies so installing <code>angular-local-storage</code> takes this CLI command:</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">
+bower <span class="token function">install</span> angular-local-storage --save
+</code></pre>
+<p>The command will download and add angular-local-storage to our app libraries. Just below where we added the <code>ionic.bundle.js</code> include angular-local-storage as seen below:</p>
+<pre data-title="" class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lib/angular-local-storage/dist/angular-local-storage.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Tell angular it is a dependency by injecting it in the angular app in the <code>www/js/app/js</code> file like this:</p>
+<pre data-title="" class=" language-javascript"><code class=" language-javascript"><span class="token keyword">var</span> app <span class="token operator">=</span> angular<span class="token punctuation">.</span><span class="token function">module</span><span class="token punctuation">(</span><span class="token string">'scotch-todo'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'ionic'</span><span class="token punctuation">,</span> <span class="token string">'LocalStorageModule'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+</pre>
+<p>It is a good practice to add a prefix to our stored entities so as 
+avoid being overwritten in future. Add a config angular block to set the
+ Local Storage prefix</p>
+<pre data-title="" class=" language-javascript"><code class=" language-javascript">app<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>localStorageServiceProvider<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    localStorageServiceProvider
+      <span class="token punctuation">.</span><span class="token function">setPrefix</span><span class="token punctuation">(</span><span class="token string">'scotch-todo'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code>
+</pre>
+<p>Let us leave it at that and continuing to the second item on our task – the controller.</p>
+<h3>The <code>main</code> Controller</h3>
+<p>Our controller will be serving as the middle man between our data (Local Storage) and the view (<code>www/index.html</code>). Let us first create a structure of the controller just below our config block in the <code>www/js/app.js</code>:</p>
+<pre data-title="" class=" language-javascript"><code class=" language-javascript"> app<span class="token punctuation">.</span><span class="token function">controller</span><span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>$scope<span class="token punctuation">,</span> $ionicModal<span class="token punctuation">,</span> localStorageService<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//store the entities name in a variable var taskData = 'task';</span>
+
+<span class="token comment" spellcheck="true">//initialize the tasks scope with empty array</span>
+$scope<span class="token punctuation">.</span>tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//initialize the task scope with empty object</span>
+$scope<span class="token punctuation">.</span>task <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">//configure the ionic modal before use</span>
+$ionicModal<span class="token punctuation">.</span><span class="token function">fromTemplateUrl</span><span class="token punctuation">(</span><span class="token string">'new-task-modal.html'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    scope<span class="token punctuation">:</span> $scope<span class="token punctuation">,</span>
+    animation<span class="token punctuation">:</span> <span class="token string">'slide-in-up'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>modal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    $scope<span class="token punctuation">.</span>newTaskModal <span class="token operator">=</span> modal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+$scope<span class="token punctuation">.</span>getTasks <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//fetches task from local storage</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+$scope<span class="token punctuation">.</span>createTask <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//creates a new task</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+$scope<span class="token punctuation">.</span>removeTask <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//removes a task</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+$scope<span class="token punctuation">.</span>completeTask <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//updates a task as completed</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>Notice how we have injected <code>localStorageService</code> in the controller so as to help us interact with Local Storage from the controller. We also injected<code>$ionicModal</code> service to help us create tasks from a modal.</p>
+<p>We also need to tell the <code>index.html</code> which controller to use and run <code>getTasks()</code> when the app starts by updating the <code>body</code> tag as shown:</p>
+<pre data-title="" class=" language-javascript"><code class=" language-javascript"><span class="token operator">&lt;</span>body ng<span class="token operator">-</span>app<span class="token operator">=</span><span class="token string">"scotch-todo"</span> ng<span class="token operator">-</span>controller<span class="token operator">=</span><span class="token string">"main"</span> ng<span class="token operator">-</span>init<span class="token operator">=</span><span class="token string">"getTasks()"</span><span class="token operator">&gt;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">&gt;</span>
+</code></pre>
+<p>We are making reasonable progress. Let us now implement those empty methods in the controller. We will start with the <code>getTasks()</code> which basically checks for <code>tasks</code> entity in the Local Storage and if it exists, fetch it.</p>
+<pre data-title="" class=" language-javascript"><code class=" language-javascript">$scope<span class="token punctuation">.</span>getTasks <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">//fetches task from local storage</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>localStorageService<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>taskData<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              $scope<span class="token punctuation">.</span>tasks <span class="token operator">=</span> localStorageService<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>taskData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+              $scope<span class="token punctuation">.</span>tasks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span></code> 
+</pre>
+<p>Furthermore we can can create a new task by pushing a <code>task</code> object to the <code>tasks</code> array and updating the Local Storage with the <code>tasks</code>.</p>
+<pre data-title="" class=" language-javascript"><code class=" language-javascript">$scope<span class="token punctuation">.</span>createTask <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">//creates a new task</span>
+          $scope<span class="token punctuation">.</span>tasks<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>$scope<span class="token punctuation">.</span>task<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          localStorageService<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>taskData<span class="token punctuation">,</span> $scope<span class="token punctuation">.</span>tasks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          $scope<span class="token punctuation">.</span>task <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">//close new task modal</span>
+          $scope<span class="token punctuation">.</span>newTaskModal<span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span></code> 
+</pre>
+<p>To remove task we can now remove a task object from the task array and update the Local Storage.</p>
+<pre data-title="" class=" language-javascript"><code class=" language-javascript">$scope<span class="token punctuation">.</span>removeTask <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">//removes a task</span>
+          $scope<span class="token punctuation">.</span>tasks<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          localStorageService<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>taskData<span class="token punctuation">,</span> $scope<span class="token punctuation">.</span>tasks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span></code>
+</pre>
+<p>Then to complete a task we find task from the array using its index, update it’s completed value and update Local Storage.</p>
+<pre data-title="" class=" language-javascript"><code class=" language-javascript">
+$scope<span class="token punctuation">.</span>completeTask <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+ <span class="token comment" spellcheck="true">//updates a task as completed </span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  $scope<span class="token punctuation">.</span>tasks<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>completed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
+ <span class="token punctuation">}</span> 
+
+  localStorageService<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>taskData<span class="token punctuation">,</span> $scope<span class="token punctuation">.</span>tasks<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code>
+</pre>
+<p>That is it! We can boast of a controller now. Let us not get too 
+excited though because our view is waiting patiently to get a treat as 
+we did to our controller.</p>
+<h2 id="the-view"><a href="#the-view"><span class="icon">#</span> The View</a></h2>
+<p>For a cleaner display of tasks, let us use ionic’s card component for display of tasks. So right inside the <code>&lt;ion-content&gt;</code> tag (which is actually a directive) add the following block:</p>
+<pre data-title="" class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>list card<span class="token punctuation">"</span></span> <span class="token attr-name">ng-repeat</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>task in tasks track by $index<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item item-divider<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">ng-bind</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>task.title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item item-body<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>Title: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">ng-bind</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>task.title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">ng-bind</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>task.content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item tabs tabs-secondary tabs-icon-left<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item item-checkbox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">ng-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>task.completed<span class="token punctuation">"</span></span> <span class="token attr-name">ng-click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>completeTask($index)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tab-item assertive<span class="token punctuation">"</span></span> <span class="token attr-name">ng-click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>removeTask($index)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon ion-android-close<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>With that we have a list of tasks presented with cards in our view. 
+Now to create a new task, we will use the modal which we already 
+configured in our controller. We are tracking the array with a unique 
+$index as it has none specified explicitly in the data source. Just 
+before the <code>body</code> closing tag:</p>
+<pre data-title="" class=" language-markup"><code class=" language-markup">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>new-task-modal.html<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/ng-template<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+        <span class="token operator">&lt;</span>ion<span class="token operator">-</span>modal<span class="token operator">-</span>view<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>ion<span class="token operator">-</span>header<span class="token operator">-</span>bar <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"bar-dark"</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>h1 <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">&gt;</span>Create a <span class="token keyword">new</span> <span class="token class-name">Task</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"button button-icon"</span> ng<span class="token operator">-</span>click<span class="token operator">=</span><span class="token string">"closeTaskModal()"</span><span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"icon ion-android-close"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>ion<span class="token operator">-</span>header<span class="token operator">-</span>bar<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>ion<span class="token operator">-</span>content<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>form ng<span class="token operator">-</span>submit<span class="token operator">=</span><span class="token string">"createTask()"</span><span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"list list-inset"</span><span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span>label <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"item item-input"</span><span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span>input ng<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"task.title"</span> type<span class="token operator">=</span><span class="token string">"text"</span> placeholder<span class="token operator">=</span><span class="token string">"Task title"</span><span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span>label <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"item item-input"</span><span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span>textarea ng<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"task.content"</span> rows<span class="token operator">=</span><span class="token string">"5"</span> placeholder<span class="token operator">=</span><span class="token string">"Task content"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>textarea<span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span>ul <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"list"</span><span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span>li <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"item item-toggle"</span><span class="token operator">&gt;</span>
+                                Completed<span class="token operator">?</span>
+                                <span class="token operator">&lt;</span>label <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"toggle toggle-balanced"</span><span class="token operator">&gt;</span>
+                                    <span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"checkbox"</span> ng<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"task.completed"</span><span class="token operator">&gt;</span>
+                                   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"track"</span><span class="token operator">&gt;</span>
+                                        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"handle"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+                                    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+                                <span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">&gt;</span>
+                            <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">"submit"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"button button-block button-positive"</span><span class="token operator">&gt;</span>Create Task<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>ion<span class="token operator">-</span>content<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ion<span class="token operator">-</span>modal<span class="token operator">-</span>view<span class="token operator">&gt;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>Finally on the view, add a button to the <code>ion-header-bar</code> directive which will be used to open the modal.</p>
+<pre data-title="" class=" language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ion-header-bar</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bar-dark<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Scotch-Todo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- New Task button--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button button-icon<span class="token punctuation">"</span></span> <span class="token attr-name">ng-click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>openTaskModal()<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon ion-compose<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ion-header-bar</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>And that is it. That is our sweet simple Todo mobile app. On the 
+other hand, I don’t think we are comfortable testing an app that is 
+supposed to run on a mobile app in a browser. Let’s do something about 
+that.</p>
+<h2 id="testing-with-phonegap-app"><a href="#testing-with-phonegap-app"><span class="icon">#</span> Testing with Phonegap App</a></h2>
+<blockquote>
+<p>PhoneGap is a free and open source framework that allows you to 
+create mobile apps using standardized web APIs for the platforms you 
+care about.</p>
+</blockquote>
+<p>PhoneGap just meets Cordova halfway to complement it where it is weak.</p>
+<p>One of those weaknesses is realtime testing while developing. With 
+just Cordova we can only install platform SDKs, build our app once and 
+test with the SDKs which might be slow and affects productivity.</p>
+<p><a href="http://app.phonegap.com/">PhoneGap App</a> lets us test our 
+app in realtime while it is being built. No need for any sort of 
+compiling or building before testing. All we need is a to place our 
+machine and our device on the same network. First things first:</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">npm <span class="token function">install</span> -g phonegap</code></pre>
+<p>This will install the command line tool and give us access to use 
+PhoneGap from the CLI. Next we need to install the app for our platform.
+ I have an Android mobile device therefore am downloading from <a href="https://play.google.com/store/apps/details?id=com.adobe.phonegap.app">Play Store</a>. You can see other platforms from the PhoneGap App website.</p>
+<p>Finally on PhoneGap app, instead of using <code>ionic serve</code> on the Todo App, we will run with</p>
+<pre data-title="" class=" language-bash"><code class=" language-bash">phonegap serve</code></pre>
+<p><a href="https://scotch.io/wp-content/uploads/2015/11/phone-gap-serve.jpg"><img src="Angular_files/phone-gap-serve-697x500.jpg" alt="phone-gap-serve" class="alignnone size-large wp-image-11873" height="500" width="697"></a></p>
+<p>Notice the I.P address because that is what we will use to talk to our mobile device.</p>
+<p>Open the installed app on your device and replace the I.P address and
+ port with the one supplied by PhoneGap CLI and tap connect. Below is a 
+preview of the app:</p>
+<p><a href="https://scotch.io/wp-content/uploads/2015/11/final-app-from-browser.jpg"><img src="Angular_files/final-app-from-browser-677x500.jpg" alt="final-app-from-browser" class="alignnone size-large wp-image-11875" height="500" width="677"></a></p>
+<p><a href="https://scotch.io/wp-content/uploads/2015/11/final-mobile-create-task.png"><img src="Angular_files/final-mobile-create-task-300x500.png" alt="final-mobile-create-task" class="alignnone size-large wp-image-11876" height="500" width="300"></a></p>
+<p>Feel free to feel like the man (or woman). We did it! Our app is 
+running live on our mobile device. You owe me a cup of coffee though.</p>
+<h2 id="conclusion"><a href="#conclusion"><span class="icon">#</span> Conclusion</a></h2>
+<p>I am so excited and proud to have completed this tutorial with you. 
+As you can see, you didn’t have to be a Java geek or Objective C nerd or
+ C# professional to develop a mobile app, we just need to apply our Web 
+development skills. I think that is amazing. This is just the beginning,
+ expect more on Ionic from Scotch.</p>
+<h2 id="scotchmas-giveaway-day-4"><a href="#scotchmas-giveaway-day-4"><span class="icon">#</span> Scotchmas Giveaway Day 4</a></h2>
+<p><div><iframe src="Angular_files/main.htm" style="width: 402px; height: 655px; margin: 0px auto; display: block;" id="rcwidget_eikhdvlb" frameborder="0"></iframe></div> <script src="Angular_files/launch.js"></script></p>
+</div>
+<footer class="aside">
+<div class="tags">
+<a href="https://scotch.io/tag/angular-js">angularJS</a>
+<a href="https://scotch.io/tag/ionic">ionic</a>
+</div>
+</footer>
+</div>
+</div>
+<div class="sidebar">
+<div class="not-fixed">
+<div class="block  ">
+<div data-serve="CA7D52E" id="bsap_1291897" class="bsap bsap_1291897">
+<style type="text/css">
+div.bsap_1291897{width:300px;display:block;}div.bsap_1291897 a{width:300px;}div.bsap_1291897 a img{padding:0;}div.bsap_1291897 a em{font-style:normal;}div.bsap_1291897 a{}
+div.bsap_1291897 img{border:0;clear:right;border-radius:5px;margin-bottom:20px !important;}
+div.bsap_1291897 a.adhere{color:#666;font-weight:bold;font-size:12px;text-align:center;width:100% !important;display:block !important;}
+div.bsap_1291897 a.adhere:hover{color:#333;}
+div.bsap_1291897 iframe{}div.bsap_1291897 a{line-height:100%;}div.bsap_1291897 a.adhere{width:300px;height:250px;line-height:2000%;}html>body div.bsap_1291897 a.adhere{width:298px;height:248px;}div.bsap_1291897 img.s{height:0;width:0;}div.bsap_1291897{line-height:9px;}div.bsap_1291897 .bsap_adhere a{height:19px !important;width:298px !important;font-size:10px;background:#f1f1f1;border:1px solid #e1e1e1;border-top:none;border-radius: 0 0 2px 2px;line-height:16px;}.bsap_backfillframe{border:0;}
+</style>
+<a href="https://srv.buysellads.com/ads/click/x/GTND423NCE7DCKJJCTA4YKQWCYBD62QECYYITZ3JCESDVKJUFTAI5KQKC6BDK23LCKBI6K3EHJNCLSIZ" class="ad0 odd " title="Easily build real-time apps for free with Syncano's backend platform. " id="bsa_6576865" target="_blank" rel="nofollow">
+<img src="Angular_files/293748-1444166336.png" alt="" height="250" width="300"></a><a href="https://srv.buysellads.com/ads/click/x/GTND423NCE7DCKJJCTA4YKQWCYBD62QWCKAICZ3JCESDVKJUCESDV2JKC6BDK23LCKBI6K3EHJNCLSIZ" class="ad1  even" title="Easily build real-time apps for free with Syncano's backend platform. " id="bsa_6663731" target="_blank" rel="nofollow">
+<img src="Angular_files/293748-1444166336.png" alt="" height="250" width="300"></a>
+
+<div class="bsap_adhere">
+
+<a href="http://www.buysellads.com/buy/detail/219041/zone/1291897?utm_source=site_219041&amp;utm_medium=website&amp;utm_campaign=imagetext&amp;utm_content=zone_1291897" class="">Advertise Here</a>
+
+</div>
+
+
+<script class="ignoreme" id="auto_2" type="text/javascript"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+</div>
+<div class="block  ">
+<h2 class="title">Popular Scotchers</h2>
+<div class="button-list">
+<ul>
+<li>
+<a style="display: block; height: 72px;" href="https://scotch.io/author/chris" class="round has-image">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/02/8a8bf3a2c952984defbd6bb48304b38e.jpeg');"></span>
+<span class="spoofer">Chris Sevilleja</span>
+<span class="visible">Chris Sevilleja</span>
+</a>
+</li>
+<li>
+<a style="display: block; height: 72px;" href="https://scotch.io/author/nick" class="round has-image">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/02/5d0008252214234c609144ff3adf62cf.jpeg');"></span>
+<span class="spoofer">Nicholas Cerminara</span>
+<span class="visible">Nicholas Cerminara</span>
+</a>
+</li>
+<li>
+<a style="display: block; height: 72px;" href="https://scotch.io/author/holly" class="round has-image">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/02/5e074956ee8ba1fea26e30d28c190495.jpeg');"></span>
+<span class="spoofer">Holly Lloyd</span>
+<span class="visible">Holly Lloyd</span>
+</a>
+</li>
+<li>
+<a style="display: block; height: 72px;" href="https://scotch.io/author/kukicadnan" class="round has-image">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/02/99c4080f412ccf46b9b564db7f482907.jpeg');"></span>
+<span class="spoofer">Ado Kukic</span>
+<span class="visible">Ado Kukic</span>
+</a>
+</li>
+<li>
+<a style="display: block; height: 72px;" href="https://scotch.io/author/ryan" class="round has-image">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/02/7f4ec37467f2f7db6fffc7b4d2cc8dc2-1.jpeg');"></span>
+<span class="spoofer">Ryan Chenkie</span>
+<span class="visible">Ryan Chenkie</span>
+</a>
+</li>
+<li>
+<a style="display: block; height: 72px;" href="https://scotch.io/author/kenwheeler" class="round has-image">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/02/4751e2e9fe7b876958d38f86a718ca91.jpeg');"></span>
+<span class="spoofer">Ken Wheeler</span>
+<span class="visible">Ken Wheeler</span>
+</a>
+</li>
+<li>
+<a style="display: block; height: 72px;" href="https://scotch.io/author/alex-sears" class="round has-image">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/02/6c0654e56c8c73ffee8f76fe03d18ccf.jpeg');"></span>
+<span class="spoofer">Alex Sears</span>
+<span class="visible">Alex Sears</span>
+</a>
+</li>
+<li>
+<a style="display: block; height: 72px;" href="https://scotch.io/author/chris92" class="round has-image">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/02/ffeece649256f09f8d52ebc17a8cc5e3.jpeg');"></span>
+<span class="spoofer">Chris Nwamba</span>
+<span class="visible">Chris Nwamba</span>
+</a>
+</li>
+<li>
+<a style="display: block; height: 72px;" href="http://pub.scotch.io/" class="round has-image">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/02/logo.png');"></span>
+<span class="spoofer">Become a Scotcher!</span>
+<span class="visible">Become a Scotcher!</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="block social ">
+<h2 class="title">Stalk Us</h2>
+<a href="https://twitter.com/scotch_io" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-twitter"></span> </span>
+</a>
+<a href="https://www.facebook.com/scotchdevelopment" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-facebook"></span> </span>
+</a>
+<a href="https://github.com/scotch-io" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-github"></span> </span>
+</a>
+<a href="https://feeds.feedblitz.com/scotch_io" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic iconic-rss-alt"></span> </span>
+</a>
+</div>
+<div class="block  bunch-of-posts">
+<h2 class="title">Trending Posts</h2>
+<div class="card ">
+<a style="display: block; height: 279px;" href="https://scotch.io/tutorials/creating-your-first-angular-2-components" class="tile ">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/05/ta3eUcBfQkGKXUsUGofA_first-angular-2-component-420x210.png');"></span>
+<div class="text">
+<h3 class="h2">Creating Your First Angular 2 Components</h3>
+</div>
+</a>
+</div>
+<div class="card ">
+<a style="display: block; height: 279px;" href="https://scotch.io/tutorials/better-node-with-es6-pt-i" class="tile ">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/05/iXqnc7zvRe2Apkk3A6ec_better-node-with-es6-part-1-420x210.png');"></span>
+<div class="text">
+<h3 class="h2">Better Node with ES6, Pt. I</h3>
+</div>
+</a>
+</div>
+<div class="card ">
+<a style="display: block; height: 293px;" href="https://scotch.io/tutorials/build-a-music-player-with-react-electron-i-setup-basic-concepts" class="tile ">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/05/b3ZglPT5TYOibndeVrS3_Scotch-Player-1-420x210.jpg');"></span>
+<div class="text">
+<h3 class="h2">Build a Music Player with React &amp; Electron I: Setup &amp; Basic Concepts</h3>
+</div>
+</a>
+</div>
+</div>
+<div class="block bunch-of-posts last">
+<div class="card ">
+<a style="display: block; height: 279px;" href="http://synd.co/25PFWSM" class="tile " target="_blank">
+<span class="img" style="background-image: url('/wp-content/uploads/2016/05/1200x628__8_-1.png');"></span>
+<div class="text">
+<h3 class="h2">​Get Job Offers From Top Tech Companies</h3>
+</div>
+</a>
+<a href="http://synd.co/11VHVYP" class="type sponsorships">
+<span>Advertise Here</span>
+</a>
+</div> </div>
+<div class="fixed-sidebar sticky">
+<div class="block">
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-4625466825098355" data-ad-slot="8619471422"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="250" width="300"></iframe></ins></ins></ins>
+<script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+</div>
+<div class="block custom-form">
+<h2 class="title">
+<span>Subscribe &amp; get our FREE eBook</span>
+Build Your First Node.js App
+</h2>
+<img src="Angular_files/first-node-app-small.png" alt="Free Node Book">
+ 
+<div id="mc_embed_signup">
+<form action="https://scotch.us3.list-manage.com/subscribe/post?u=1c412c864c03eadaf07ccd61e&amp;id=a818d504d4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+<input name="LOCATION" id="LOCATION" value="sidebar_fixed" type="hidden">
+<div class="mc-field-group form-group">
+<input name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Email Address" type="email">
+</div>
+<div id="mce-responses" class="clear">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div>
+<div style="position: absolute; left: -5000px;"><input name="b_1c412c864c03eadaf07ccd61e_a818d504d4" type="text"></div>
+<div class="clear text-center"><input value="Get the Free Node Book" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary btn-sm btn-block" type="submit"></div>
+</form>
+</div>
+ 
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="author-guts guts">
+<div class="row">
+<div class="col-sm-3">
+<a href="https://scotch.io/author/chris92" class="profile-spot no-border">
+<span class="img" style="background-image: url('//gravatar.com/avatar/ffeece649256f09f8d52ebc17a8cc5e3?s=200&amp;d=https%3A%2F%2Fscotch.io%2Fwp-content%2Fthemes%2Fscotchpress%2Fimg%2Flogo-large.png');"></span>
+<span class="text">My Scotch Posts</span>
+</a>
+</div>
+<div class="col-sm-9">
+<div class="meta">
+<h3>
+<a href="https://scotch.io/author/chris92">
+Chris Nwamba </a>
+</h3>
+<p></p><p>I have passion for instructing computers and understanding 
+it's language and would die to remain a computer programmer in my next 
+life.</p><p></p>
+<div class="links">
+<a href="https://thepub.io/@chris92" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-heart"></span>
+</span>
+</a>
+<a href="https://twitter.com/chrizt_n" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-twitter"></span>
+</span>
+</a>
+<a href="https://facebook.com/nwambachristian" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-facebook"></span>
+</span>
+</a>
+<a href="https://github.com/christiannwamba" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-github"></span>
+</span>
+</a>
+<a href="https://plus.google.com/+ChristianNwamba" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-google-plus"></span>
+</span>
+</a>
+<a href="https://instagram.com/sir_chrizt" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-instagram"></span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div> <div class="bunch-of-posts next-guts guts">
+<div class="row title">
+<div class="col-md-12">
+<h4>Next Up</h4>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6 col-a">
+<div class="card ">
+<a style="display: block; height: 504px;" href="https://scotch.io/bar-talk/scotchmas-day-5-chromecast-jedi-bath-robes-and-star-wars-codepens" class="tile ">
+<span class="img" style="background-image: url('/wp-content/uploads/2015/12/scotchy.png');"></span>
+<div class="text">
+<h3 class="h2">Scotchmas Day 5 – Chromecast, Jedi Bath Robes, and Star Wars Codepens</h3>
+<p>The Scotchmas Day 4 giveaway can be found at the end of this article.In the past years, making...</p>
+</div>
+</a>
+<a href="https://scotch.io/author/holly" class="profile-spot no-border">
+<span class="img" style="background-image: url('https://www.gravatar.com/avatar/5e074956ee8ba1fea26e30d28c190495?s=200&amp;d=https%3A%2F%2Fscotch.io%2Fwp-content%2Fthemes%2Fscotchpress%2Fimg%2Flogo-large.png');"></span>
+<span class="text">Holly Lloyd</span>
+</a>
+</div>
+</div>
+<div class="col-md-6 col-b">
+<div class="card ">
+<a style="display: block; height: 504px;" href="https://scotch.io/tutorials/learn-webrtc-build-a-real-time-tic-tac-toe" class="tile ">
+<span class="img" style="background-image: url('/wp-content/uploads/2015/12/learn-webrtc-build-real-time-tic-tac-toe.png');"></span>
+<div class="text">
+<h3 class="h2">Learn WebRTC: Build a Real Time Tic-Tac-Toe</h3>
+<p>The Scotchmas Day 4 giveaway can be found at the end of this article.In the past years, making...</p>
+</div>
+</a>
+<div class="tags">
+<a href="https://scotch.io/tag/webrtc">webRTC</a>
+</div>
+<a href="https://scotch.io/author/kevin" class="profile-spot no-border">
+<span class="img" style="background-image: url('https://www.gravatar.com/avatar/225f53da0db507b5920b99107f9f7375?s=200&amp;d=https%3A%2F%2Fscotch.io%2Fwp-content%2Fthemes%2Fscotchpress%2Fimg%2Flogo-large.png');"></span>
+<span class="text">Kevin Gleason</span>
+</a>
+</div> </div>
+</div>
+</div> <div class="comments-guts guts">
+<div class="row">
+<div class="col-md-12">
+<div id="disqus_thread"></div>
+</div>
+</div>
+</div> <div style="left: -35px;" class="page-friend show">
+<div class="nav-stuff stuff">
+<div class="custom-select">
+<label>Space Jump</label>
+<select><option selected="selected" value="what-really-is-ionic">What Really is Ionic?</option><option value="setup-and-installation">Setup and Installation</option><option value="making-a-todo-app">Making a Todo App</option><option value="building-out-the-real-stuff">Building Out the Real Stuff</option><option value="a-local-storage-service">A Local Storage Service</option><option value="the-view">The View</option><option value="testing-with-phonegap-app">Testing with Phonegap App</option><option value="conclusion">Conclusion</option><option value="scotchmas-giveaway-day-4">Scotchmas Giveaway Day 4</option></select>
+</div>
+</div>
+<div class="share-stuff stuff">
+<a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fscotch.io%2Ftutorials%2Fcreate-your-first-mobile-app-with-angularjs-and-ionic&amp;text=Create+Your+First+Mobile+App+with+AngularJS+and+Ionic&amp;via=scotch_io&amp;related=scotch_io" class="icon-spot twitter">
+<span style="transform: rotate(1140.4deg);" class="icon">
+<span class="iconic iconic-social-twitter"></span>
+</span>
+<span class="text">Chirp Chirp</span>
+</a>
+<a href="#" class="icon-spot facebook" onclick="window.open(
+                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://scotch.io/tutorials/create-your-first-mobile-app-with-angularjs-and-ionic'),
+                'facebook-share-dialog',
+                'width=626,height=436');
+            return false;">
+<span style="transform: rotate(1140.4deg);" class="icon">
+<span class="iconic iconic-social-facebook"></span>
+</span>
+<span class="text">Zuck It</span>
+</a>
+</div>
+<div class="link-stuff stuff">
+</div>
+<div class="like-stuff stuff">
+<a href="#login-modal" data-api-url="//pub.scotch.io/api/posts/11833/like/wordpress" data-id="11833" class="icon-spot like-it-love-it open-login-popup" target="_blank">
+<span class="icon">
+<span class="iconic iconic-heart"></span>
+</span>
+<span class="text">Like</span>
+</a>
+<a href="#login-modal" data-api-url="//pub.scotch.io/api/posts/11833/bookmark/wordpress" class="icon-spot book-it-to-the-moon open-login-popup" target="_blank">
+<span class="icon">
+<span class="iconic iconic-bookmark"></span>
+</span>
+<span class="text">Bookmark</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+<footer class="site-footer">
+<div class="newsletter">
+<form class="is-for-newsletter">
+<span class="iconic iconic-envelope-closed"></span>
+<input placeholder="Subscribe to the Scotch Newsletter" required="" type="email">
+<button type="submit">More Scotch Please</button>
+</form>
+</div>
+<div class="bottom-stuff">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<a href="https://scotch.io/" class="profile-spot">
+<span class="img"></span>
+</a>
+</div>
+<div class="col-md-8">
+<nav>
+<ul>
+<li>
+<a href="https://scotch.io/">Scotch.io</a>
+<ul>
+<li><a href="https://scotch.io/tutorials">Tutorials</a></li>
+<li><a href="https://scotch.io/bar-talk">Bar Talk</a></li>
+<li><a href="https://twitter.com/sevilayha" target="_blank">@sevilayha</a></li>
+<li><a href="https://twitter.com/whatnicktweets" target="_blank">@whatnicktweets</a></li>
+<li><a href="https://twitter.com/hollylawly" target="_blank">@hollylawly</a></li>
+</ul>
+</li>
+<li>
+<a href="https://pub.scotch.io/" target="_blank">The Pub</a>
+<ul>
+<li><a href="https://pub.scotch.io/register" target="_blank">Write a Post</a></li>
+<li><a href="https://pub.scotch.io/" target="_blank">Community Posts</a></li>
+</ul>
+</li>
+<li>
+<a href="https://digital.scotch.io/" target="_blank">Our Stuff</a>
+<ul>
+<li><a href="https://leanpub.com/mean-machine" target="_blank">MEAN Machine</a></li>
+<li><a href="https://spudpress.com/" target="_blank">SpudPress</a></li>
+<li><a href="https://box.scotch.io/" target="_blank">Scotch Box</a></li>
+<li><a href="https://panels.scotch.io/" target="_blank">Scotch Panels</a></li>
+</ul>
+</li>
+<li>
+<a href="https://scotch.io/about">About Us</a>
+<ul>
+<li><a href="https://school.scotch.io/" target="_blank">Scotch School</a></li>
+<li><a href="https://digital.scotch.io/" target="_blank">Scotch Digital</a></li>
+<li><a href="https://shop.scotch.io/" target="_blank">Scotch Store</a></li>
+<li><a href="https://scotch-slack.herokuapp.com/" target="_blank">Scotch Slack</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row social">
+<div class="col-md-12">
+<a href="https://twitter.com/scotch_io" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-twitter"></span>
+</span>
+</a>
+<a href="https://facebook.com/scotchdevelopment" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-facebook"></span>
+</span>
+</a>
+<a href="https://github.com/scotch-io" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-github"></span>
+</span>
+</a>
+<a href="https://feeds.feedblitz.com/scotch_io" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic iconic-rss-alt"></span>
+</span>
+</a>
+<a href="https://pub.scotch.io/" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-pencil"></span>
+</span>
+</a>
+</div>
+</div>
+<div class="row misc">
+<div class="col-md-12">
+<p>SSBsb3ZlIHNjb3RjaC4gU2NvdGNoeSBzY290Y2ggc2NvdGNoLg==</p>
+<p>v40.13378133781337 / <a href="https://scotch.io/advertise">Advertise</a> / <a href="https://scotch.io/contact">Contact</a> / <a href="https://scotch.io/license">License</a></p>
+<p>© 2016 Scotch.io, LLC. All Rights Super Duper Reserved.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="spudpress">
+<p><strong>Pain free</strong> and <strong>100% static</strong> hosting by <a href="https://spudpress.com/" target="_blank">SpudPress</a> <span class="iconic iconic-heart"></span></p>
+</div>
+</footer>
+</div> 
+<div class="misc-links">
+<a href="https://pub.scotch.io/register" class="profile-spot">
+<span class="img"></span>
+<span class="text">Login / Register</span>
+</a><a href="http://pub.scotch.io/logout" class="text logout hidden">Logout</a>
+
+<hr>
+<div class="container-fluid logged-in-menu hidden">
+<div class="row" style="margin-bottom:20px">
+<div class="col-xs-6 col-sm-4 col-sm-offset-2">
+<a href="http://pub.scotch.io/my/home" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-heart"></span>
+</span>
+<span class="text">Likes</span>
+</a>
+</div>
+<div class="col-xs-6 col-sm-4">
+<a href="http://pub.scotch.io/my/home" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-bookmark"></span>
+</span>
+<span class="text">Bookmarks</span>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-6 col-sm-4">
+<a href="http://pub.scotch.io/my/posts" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-copywriting"></span>
+</span>
+<span class="text">My Posts</span>
+</a>
+</div>
+<div class="col-xs-6 col-sm-4">
+<a href="http://pub.scotch.io/my/earnings" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-dollar"></span>
+</span>
+<span class="text">Earnings</span>
+</a>
+</div>
+<div class="col-xs-6 col-sm-4">
+<a href="http://pub.scotch.io/my/profile" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-person-genderless"></span>
+</span>
+<span class="text">Profile</span>
+</a>
+</div>
+</div>
+<hr>
+</div>
+<div class="container-fluid">
+<h4>The Scotch.io Family</h4>
+<div class="row">
+<div class="col-sm-4 col-xs-4">
+<a href="https://scotch.io/" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-heart"></span>
+</span>
+<span class="text">Scotch.io</span>
+</a>
+</div>
+<div class="col-sm-4 col-xs-4">
+<a href="https://pub.scotch.io/" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-pencil"></span>
+</span>
+<span class="text">The Pub</span>
+</a>
+</div>
+<div class="col-sm-4 col-xs-4">
+<a href="https://school.scotch.io/" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic iconic-monitor"></span>
+</span>
+<span class="text">School</span>
+</a>
+</div>
+</div>
+</div>
+<hr>
+<form class="is-for-newsletter">
+<input placeholder="kylo-ren@hoth-topic.com" required="" type="email">
+<button type="submit">Get Scotch in your inbox</button>
+</form>
+<hr>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-3 col-xs-6">
+<a href="https://twitter.com/scotch_io" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-twitter"></span>
+</span>
+<span class="text">Twitter</span>
+</a>
+</div>
+<div class="col-sm-3 col-xs-6">
+<a href="https://facebook.com/scotchdevelopment" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-facebook"></span>
+</span>
+<span class="text">Facebook</span>
+</a>
+</div>
+<div class="col-sm-3 col-xs-6">
+<a href="https://github.com/scotch-io" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-social-github"></span>
+</span>
+<span class="text">GitHub</span>
+</a>
+</div>
+<div class="col-sm-3 col-xs-6">
+<a href="https://scotch.io/feed" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic iconic-rss-alt"></span>
+</span>
+<span class="text">RSS</span>
+</a>
+</div>
+</div>
+</div>
+<hr>
+<div class="container-fluid projects">
+<div class="row">
+<div class="col-sm-4 col-xs-12">
+<a href="https://leanpub.com/mean-machine" target="_blank" class="profile-spot no-border">
+<span class="img" style="background-image: url('/wp-content/themes/scotchpress/img/spot-mean-machine.png');"></span>
+<span class="text">MEAN Machine</span>
+</a>
+</div>
+<div class="col-sm-4 col-xs-12">
+<a href="https://spudpress.com/" target="_blank" class="profile-spot no-border">
+<span class="img" style="background-image: url('/wp-content/themes/scotchpress/img/spot-spudpress.png');"></span>
+<span class="text">SpudPress</span>
+</a>
+</div>
+<div class="col-sm-4 col-xs-12">
+<a href="https://box.scotch.io/" target="_blank" class="profile-spot no-border">
+<span class="img" style="background-image: url('/wp-content/themes/scotchpress/img/spot-vagrant.png');"></span>
+<span class="text">Scotch Box</span>
+</a>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-4 col-xs-12">
+<a href="https://panels.scotch.io/" target="_blank" class="profile-spot no-border bottom">
+<span class="img" style="background-image: url('/wp-content/themes/scotchpress/img/spot-panels.png');"></span>
+<span class="text">Panels</span>
+</a>
+</div>
+<div class="col-sm-4 col-xs-12">
+<a href="https://digital.scotch.io/" target="_blank" class="profile-spot no-border bottom">
+<span class="img" style="background-image: url('/wp-content/themes/scotchpress/img/spot-digital.png');"></span>
+<span class="text">Digital</span>
+</a>
+</div>
+<div class="col-sm-4 col-xs-12">
+<a href="https://pub.scotch.io/" class="profile-spot no-border bottom">
+<span class="img" style="background-image: url('/wp-content/themes/scotchpress/img/logo-pub.png');"></span>
+<span class="text">The Pub</span>
+</a>
+</div>
+</div>
+</div>
+<hr>
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-4">
+<a href="https://scotch.io/advertise" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-dollar"></span>
+</span>
+<span class="text">Advertise</span>
+</a>
+</div>
+<div class="col-xs-4">
+<a href="https://scotch.io/contact" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-envelope-open"></span>
+</span>
+<span class="text">Contact</span>
+</a>
+</div>
+<div class="col-xs-4">
+<a href="https://scotch.io/write-for-us" target="_blank" class="icon-spot">
+<span class="icon">
+<span class="iconic iconic-pencil"></span>
+</span>
+<span class="text">Write for Us</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div id="login-modal" class="base-popup white-popup mfp-with-anim mfp-hide">
+<div class="auth-modal auth-modal-login">
+<div class="vertical-center">
+<div class="page-header text-center">
+<h3>Login</h3>
+<small>or <a href="#" class="auth-show-signup">Sign Up</a></small>
+</div>
+<form id="login-form" class="login-form text-left" method="POST" action="//pub.scotch.io/api/auth/login">
+<div class="form-group">
+<input class="form-control" name="email" placeholder="Email" type="email">
+</div>
+<div class="form-group">
+<input class="form-control" name="password" placeholder="******" type="password">
+</div>
+<label class="custom-checkbox active m-b">
+Remember Me
+<div class="field">
+<input name="remember" value="1" checked="checked" type="checkbox">
+</div>
+</label>
+<div class="form-group">
+<button type="submit" class="btn btn-success btn-lg make-big btn-block">Login</button>
+</div>
+</form>
+<p class="text-right extra-text-small">
+<a href="http://pub.scotch.io/password/reset">Forgot Your Password?</a>
+</p>
+</div>
+</div>
+ 
+<div class="auth-modal auth-modal-signup">
+<div class="page-header text-center">
+<h3>Sign Up</h3>
+<small>or <a href="#" class="auth-show-login">Login</a></small>
+</div>
+<div class="form-group row text-center">
+<div class="col-xs-4">
+<span class="iconic iconic-heart iconic-sm"></span>
+<h5 class="text-muted">Like</h5>
+</div>
+<div class="col-xs-4">
+<span class="iconic iconic-bookmark iconic-sm"></span>
+<h5 class="text-muted">Bookmark</h5>
+</div>
+<div class="col-xs-4">
+<span class="iconic iconic-pencil iconic-sm"></span>
+<h5 class="text-muted">Write</h5>
+</div>
+</div>
+<form id="signup-form" method="POST" action="//pub.scotch.io/api/auth/register" class="text-left">
+ 
+<div class="hidden">
+<input name="my_name" id="my_name" type="text">
+</div>
+<div class="form-group scotch-unique-group unique-group">
+<input class="form-control unique-check" data-base="//pub.scotch.io" name="username" placeholder="Username" type="text">
+</div>
+<div class="form-group scotch-unique-group unique-group">
+<input class="form-control unique-check" data-base="//pub.scotch.io" name="email" placeholder="Email" type="email">
+</div>
+<div class="form-group">
+<input class="form-control" name="password" placeholder="Password" type="password">
+</div>
+<label class="custom-checkbox active m-b">
+Subscribe
+<div class="field">
+<input name="newsletter" value="1" checked="checked" type="checkbox">
+</div>
+</label>
+<div class="form-group">
+<button type="submit" class="btn btn-success btn-lg make-big btn-block">Join Scotch</button>
+</div>
+</form>
+</div>
+</div>
+</div> 
+ 
+<script type="text/javascript" src="Angular_files/superpower.js"></script>
+<script data-rocketoptimized="true" data-cfasync="true" async="" data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript"></script>
+<script data-rocketoptimized="true" data-cfasync="true" async="" data-rocketsrc="//s3.buysellads.com/ac/bsa.js" type="text/rocketscript"></script>
+<script data-rocketoptimized="true" data-cfasync="true" type="text/rocketscript">
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-4625466825098355",
+        enable_page_level_ads: true
+      });
+    </script>
+ 
+<script data-rocketoptimized="true" data-cfasync="true" type="text/rocketscript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-36045075-1', 'auto');
+        if (docCookies.getItem('is_scotcher')) {
+            ga('set', {
+                userId: docCookies.getItem('user_id'),  // signed in id
+                             // author
+                dimension1: 'Chris Nwamba',
+                                dimension2: true,                       // logged in or not
+                dimension3: false                       // pro user
+            });
+        }
+        ga('send', 'pageview');
+    </script>
+ 
+<script data-rocketoptimized="true" data-cfasync="true" type="text/rocketscript">
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '992053144150851');
+    fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=992053144150851&ev=PageView&noscript=1"/></noscript><p style="transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); margin: 0px;"></p>
+
+
+ 
+ 
+ 
+<script id="" type="text/javascript">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","//connect.facebook.net/en_US/fbevents.js");fbq("init","417778941754366");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=417778941754366&amp;ev=PageView&amp;noscript=1"></noscript>
+
+
+<script id="" type="text/javascript">var google_conversion_id=956542766,google_custom_params=window.google_tag_params,google_remarketing_only=!0;</script>
+<script src="Angular_files/conversion.js" id="" type="text/javascript"></script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/956542766/?value=0&amp;guid=ON&amp;script=0">
+</div>
+</noscript><iframe style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" allowfullscreen="true" allowtransparency="true" scrolling="no" id="rufous-sandbox" frameborder="0"></iframe><ins data-adsbygoogle-status="done" style="display: none; width: auto; height: auto;" class="adsbygoogle"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="0" width="0"></iframe></ins></ins></ins><div style="display: none; visibility: hidden;">
+
+<script type="text/javascript"></script>
+<script data-rocketoptimized="true" data-rocketsrc="//www.googleadservices.com/pagead/conversion.js" type="text/javascript"></script><img alt="" src="Angular_files/a_002.htm" height="1" width="1" border="0">
+<noscript></noscript></div></body></html>

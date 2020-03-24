@@ -1,0 +1,1 @@
+!function(t){var e=t.document,c=e.createElement("script"),r=e.getElementsByTagName("script")[0],n={},i={};c.src="https://widget-prime.rafflecopter.com/load.js";var o={_configs:n,config:function(t,e){n[t]=e},_logins:i,login:function(t,e){i.creds=t,i.callback=e}};t.cptr&&t.cptr.widget||(t.cptr=t.cptr||{},t.cptr.widget=o),r.parentNode.insertBefore(c,r)}(window);
