@@ -49,7 +49,7 @@
             <div class="row color2" >
                 <div class="col-xs-12 col-sm-6 col-md-1 col-lg-1 centrar1">	
 						<a style="color:white; text-decoration:none; font-size:40px; font-family:Algerian" href="#" >
-							<img src="img/umss.png" alt="" width="80px" height="120px"> 
+							<img src="img/logo.png" alt="" width="140px" height="140px"> 
 						</a>
 						
                 </div>

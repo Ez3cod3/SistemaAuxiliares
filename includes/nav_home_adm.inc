@@ -23,7 +23,8 @@
                         <i class="fa fa-user"></i><b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="log_adm.php"><i class="fa fa-user fa-fw"></i> Ingresar Administrador</a>
+                        <li><a href="log_adm.php"><i class="fa fa-sign-out fa-fw"></i>
+                        Salir</a>
                         </li>
                        
                     </ul>
