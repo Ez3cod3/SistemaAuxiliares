@@ -1,4 +1,17 @@
+<?php 
+include_once('conexion.php');
+$conexion=Conectar();
 
+$consulta="select * from usuario as u, usu_rol as ur,rol as r ,rol_fun as rf,funcion as f 
+   where u.COD_USUARIO=ur.COD_USUARIO and ur.ID_ROL = r.ID_ROL 
+   and r.ID_ROL = rf.ID_ROL 
+   and rf.ID_FUN = f.ID_FUN 
+   and u.COD_USUARIO='$cod'";
+
+$query4=mysqli_query($conexion,$consulta);
+$cont = mysqli_num_rows($query);
+
+?>
 <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">

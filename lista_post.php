@@ -41,7 +41,7 @@ include "includes/cabecera_home.inc";
 											include_once('conexion.php');
 											$conexion=Conectar();
 											$cont=0;
-											$consulta="select * from convocatoria";
+											$consulta="select * from convocatoria as con, auxiliatura as aux where con.COD_AUXILIATURA = aux.COD_AUXILIATURA";
 											$query=mysqli_query($conexion, $consulta);	
 											$identi=0;
 											while($dato=mysqli_fetch_array($query))
@@ -51,9 +51,9 @@ include "includes/cabecera_home.inc";
 												?>
 												
 												<tr>
-													<td >".$cont."</td>
-													<td>".$dato[""]."</td>
-													<td >".$dato[""]."</td>
+													<td ><?php echo "$cont"; ?></td>
+													<td><?php echo "".$dato['COD_CONVOCATORIA'].""; ?></td>
+													<td ><?php echo "".$dato['NOM_AUXILIATURA'].""; ?></td>
 													<td ><center><a href ='upd_rol.php?id=".$dato['']."'><img src='img/editar.png' height='32' width='32'/></a></center></td>
 													<td ><center><a href =""></a></center></td>
 										<?php

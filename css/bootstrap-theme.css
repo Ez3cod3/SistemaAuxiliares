@@ -170,7 +170,7 @@
 .btn-warning.disabled,
 .btn-warning:disabled,
 .btn-warning[disabled] {
-  background-color: #eb9316;
+  background-color: red;
   background-image: none;
 }
 .btn-danger {

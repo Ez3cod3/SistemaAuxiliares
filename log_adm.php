@@ -9,11 +9,9 @@ include "includes/cabecera_login.inc";
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<img src="img/logo.png" width="50" height="50">
-									<!--i class="ace-icon fa fa-leaf green"></i-->
-									<span class="red">UMSS</span>
-									
+									<img src="img/logo.png" width="120" height="120">
 								</h1>
+								<h1><span class="red">UMSS</span></h1>
 								<h1>
 									<span class="white" id="id-text2">Gestion Auxiliares</span>
 								</h1>
@@ -54,6 +52,7 @@ include "includes/cabecera_login.inc";
 															<i class="ace-icon fa fa-key"></i>
 															<span class="bigger-110">Ingresar</span>
 														</button>
+														<a href="home.php"  class="btn btn-warning btn-sm"><i class="fa fa-hand-o-left"></i> Volver Atras</a>	
 													</div>
 
 													<div class="space-4"></div>

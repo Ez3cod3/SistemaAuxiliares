@@ -1,5 +1,11 @@
 <?php 
 include "includes/cabecera_home.inc";
+require_once('conexion.php');
+$conexion = Conectar();
+$con=$_GET['id'];
+$consulta="select * from convocatoria as con, auxiliatura as aux where con.COD_AUXILIATURA = aux.COD_AUXILIATURA and con.COD_CONVOCATORIA = '$con'";
+$sql= mysqli_query($conexion,$consulta);
+$dato= mysqli_fetch_array($sql);
 ?>
 
 <div class="container">
@@ -11,7 +17,7 @@ include "includes/cabecera_home.inc";
          <div id="page-wrapper"><br>
 			
 			
-			<h3><b style="color:blue;">Informacion de la Convocatoria</b></h3><hr>
+			<h3><b style="color:blue;">Informacion - <?php echo "".$dato['NOM_CONVOCATORIA'].""; ?></b></h3><hr>
 			
 						<section>
 							<div class='row'>
@@ -29,7 +35,7 @@ include "includes/cabecera_home.inc";
 												<div class='btn-group-vertical'>
 												
 												<div class='btn-group'>
-												<button type='button' class='btn btn-default btn-sm' data-toggle='tooltip' data-placement='center' title='pdf'><img src='img/iconoPDF.png' height='40' width='40'/></button>
+												<a type='button' href="descarga.php?id=<?php echo "".$dato['PDF_CONVOCATORIA'].""; ?>" class='btn btn-default btn-sm' data-toggle='tooltip' data-placement='center' title='pdf'><img src='img/iconoPDF.png' height='40' width='40'/></a>
 											
 												</div>
 											</ul>
@@ -38,7 +44,7 @@ include "includes/cabecera_home.inc";
 												<div class='btn-group-vertical'>
 												
 												<div class='btn-group'>
-												<a type='button' href="registro_con.php" class='btn btn-default btn-sm' data-toggle='tooltip' data-placement='center' title='pdf'><img src='img/modificar.png' height='40' width='40'/></a>
+												<a type='button' href="registro_con.php?id=<?php echo "".$dato['COD_CONVOCATORIA'].""; ?>"" class='btn btn-default btn-sm' data-toggle='tooltip' data-placement='center' title='pdf'><img src='img/modificar.png' height='40' width='40'/></a>
 											
 												</div>
 											</ul>

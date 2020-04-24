@@ -7,12 +7,12 @@
 		
 		$conexion=Conectar();
 		$consulta="SELECT * FROM usuario where COD_USUARIO='$cod_us' and CI_USUARIO='$con_us'";
-		echo "$consulta";
+		
 
 		$query=mysqli_query($conexion,$consulta);
 		$dato=mysqli_fetch_array($query);
 		$count = mysqli_num_rows($query);
-		echo "$count";
+	
 		if($count == 1)
 		{ 
 		

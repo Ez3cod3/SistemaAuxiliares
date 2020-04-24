@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand"> <i class="fa fa-th-large"></i> UMSS</a>
+                <a href="home.php" class="navbar-brand"> <i class="fa fa-th-large"></i> UMSS</a>
             </div>
             <!-- /.navbar-header -->
 
