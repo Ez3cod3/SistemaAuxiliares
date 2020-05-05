@@ -4,7 +4,7 @@ $yes = $_SESSION['log'];
 $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
 
-//$valor= $_GET['m'];
+$valor= $_GET['m'];
     
 include "includes/cabecera_home.inc";
 ?>
@@ -13,7 +13,7 @@ include "includes/cabecera_home.inc";
 		<?php
 			// codigo para menu navegacion
 			$hoy = date("F j, Y");
-			include "includes/nav_home.inc";
+			include "includes/nav_home_adm.inc";
         ?>
         <div id="page-wrapper"></br>
 			<ol class="breadcrumb">
@@ -21,7 +21,7 @@ include "includes/cabecera_home.inc";
 				<li class="active"> Listado de Roles por Cada Usuario</li>
 			</ol>
             <div class="row">
-				<!--<?php
+				<?php
 					if($valor==1){
 				?>
 					<div class="alert alert-success alert-dismissable">
@@ -49,7 +49,7 @@ include "includes/cabecera_home.inc";
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <i class="fa fa-university"></i> Listado de Roles por Cada Usuario
-                        </div>--!>
+                        </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 								<div class="table-responsive">
@@ -121,7 +121,7 @@ include "includes/cabecera_home.inc";
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
-								<span class="input-group-addon"><img src="img/rol.png" width="20" height="20"></span>
+								<span class="input-group-addon"></span>
 								<select class="form-control" name='rol2' id="rol2" required>
 									<option value="">--Seleccione Rol--</option>
 									<?php
@@ -141,7 +141,7 @@ include "includes/cabecera_home.inc";
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
-								<span class="input-group-addon"><img src="img/usr.png" width="20" height="20"></span>
+								<span class="input-group-addon"></span>
 								<select class="form-control" name='usr1' id="usr1" required>
 									<option value="">--Seleccione Usuario--</option>
 									<?php

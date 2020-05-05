@@ -1,4 +1,9 @@
 <?php 
+session_start(); 
+$yes = $_SESSION['log']; 
+$cod = $_SESSION['cod'];
+$ids = $_SESSION['usr'];
+
 include "includes/cabecera_home.inc";
 ?>
 

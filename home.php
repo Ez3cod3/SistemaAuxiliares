@@ -40,7 +40,7 @@ include "includes/cabecera_home.inc";
 										?>
 										<div class='col-xs-12 col-sm-9 col-md-6 col-lg-6'>
 											<h3 style="color:black;"><?php echo "".$dato['NOM_CONVOCATORIA'].""; ?></h3><hr>
-											<p align='justify' style="color:black;"><?php echo "".$dato['OBS_AUXILIATURA'].""; ?><br><a href='convocatoria.php?id=<?php echo "".$dato['COD_CONVOCATORIA'].""; ?>'>leer más</a></p>
+											<p align='justify' style="color:black;"><br><a href='convocatoria.php?id=<?php echo "".$dato['COD_CONVOCATORIA'].""; ?>'>leer más</a></p>
 										</div>
 										<div class='hidden-xs col-sm-3 col-md-4 col-lg-4'>
 						
@@ -64,6 +64,41 @@ include "includes/cabecera_home.inc";
 
     </div><br>
     <!-- /#wrapper -->
+    <div id="login" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title"> <i class="fa fa-user fa-fw"></i>Login</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-signin" action="validar_usu.php" method="post" enctype="multipart/form-data">
+						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+							<label>Usuario</label>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+							<div class="input-group">
+								<span class="input-group-addon"></span>
+								<input type="text" class="form-control" placeholder="Identificacion" name="cod_usu">	
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+							<label>Contraseña</label>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+							<div class="input-group">
+								<span class="input-group-addon"></span>
+								<input type="password" class="form-control" placeholder="Contraseña" name="con_usu">
+							</div>
+						</div>
+						<div class="modal-footer">
+							</br><button name="asig_form" type="submit" class="btn btn-success btn-sm" id="asig_rol"><i class="fa fa-check"></i>Iniciar Secion</button>
+						</div>												
+					</form>
+				</div><!-- End of Modal body -->
+			</div><!-- End of Modal content -->
+		</div><!-- End of Modal dialog -->
+	</div><!-- End of Modal -->
 </div>
 <!-- /#container -->
 <?php      

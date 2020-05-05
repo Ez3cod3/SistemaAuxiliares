@@ -4,7 +4,7 @@ $yes = $_SESSION['log'];
 $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
 
-//$valor= $_GET['m'];
+$valor= $_GET['m'];
     
 include "includes/cabecera_home.inc";
 ?>
@@ -13,7 +13,7 @@ include "includes/cabecera_home.inc";
 		<?php
 			// codigo para menu navegacion
 			$hoy = date("F j, Y");
-			include "includes/nav_home.inc";
+			include "includes/nav_home_adm.inc";
         ?>
         <div id="page-wrapper"></br>
 			<ol class="breadcrumb">
@@ -111,13 +111,13 @@ include "includes/cabecera_home.inc";
 					<h4 class="modal-title"> <i class="fa fa-plus-square"></i> Nueva Funcion del Sistema</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-signin" action="configure.php" method="post" enctype="multipart/form-data">
+					<form class="form-signin" action="configuracion.php" method="post" enctype="multipart/form-data">
 						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 							<label>Funcion </label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
-								<span class="input-group-addon"><img src="img/funcion.png" width=20 height=20></span>
+								<span class="input-group-addon"></span>
 								<input type="text" class="form-control" name="funcion" id="funcion" required>
 							</div>
 						</div>
@@ -126,19 +126,11 @@ include "includes/cabecera_home.inc";
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
-								<span class="input-group-addon"><img src="img/descripcion.png" width=20 height=20></span>
-								<textarea class="form-control" name="des_func" id="des_func" required rows="3"></textarea>
+								<span class="input-group-addon"></span>
+								<textarea class="form-control" name="des_fun" id="des_fun" required rows="3"></textarea>
 							</div>
 						</div>
-						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-							<label>Imagen </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-							<div class="input-group">
-								<span class="input-group-addon"><img src="img/foto.png" width=20 height=20></span>
-								<input type="file" class="form-control" name="img_func" id="img_func">
-							</div>
-						</div>
+						
 						<div class="modal-footer">
 							</br><button name="insert_func" type="submit" class="btn btn-success btn-sm" id="insert_func"><i class="fa fa-check"></i> Insertar Datos</button>
 						</div>												

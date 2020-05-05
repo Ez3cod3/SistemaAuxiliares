@@ -14,21 +14,14 @@
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="fa fa-calendar"></i><?php echo" ".$hoy." ";?></li>
+                 <li></li>
                
                 <li class="fa fa-clock-o" id="liveclock"></li>
+                <li><a href="#login" data-toggle="modal"><i class="fa fa-user fa-fw" ></i>Iniciar Secion</a>
+                        </li>
 
                 <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-user"></i><b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="log_adm.php"><i class="fa fa-user fa-fw"></i> Ingresar Administrador</a>
-                        </li>
-                       
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
+                
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
@@ -43,19 +36,31 @@
                            
                                     <div class='panel-heading' style='padding: 1px;'>
                                         <h4>
-                                            <p style='padding-left: 7px;'><a data-toggle='collapse' data-parent='#accordion' href='#c".$count."' style='font-size : 14px;'>Convocatorias</a></p>
+                                            <p style='padding-left: 7px;'><a data-toggle='collapse' data-parent='#accordion' href='#c' style='font-size : 14px;'>Convocatorias</a></p>
                                         </h4>
+                                    </div>
+                                    
+                                    <div id="c" class='panel-collapse collapse'>
+                                        <div class='panel-body' >
+                                        <a href='' ><li style='list-style:none;'>Convocatorias Habiles</a></li>
+                                        <a href='' ><li style='list-style:none;'>Convocatorias Pasadas</a></li>
+                                        </div>
+
                                     </div>
                                     <div class='panel-heading' style='padding: 1px;'>
                                         <h4>
-                                            <p style='padding-left: 7px;'><a data-toggle='collapse' data-parent='#accordion' href='#c".$count."' style='font-size : 14px;'>Lista de Habilitados</a></p>
+                                            <p style='padding-left: 7px;'><a data-toggle='collapse' data-parent='#accordion' href='#v' style='font-size : 14px;'>Listas</a></p>
                                         </h4>
                                     </div>
-                                    <div class='panel-heading' style='padding: 1px;'>
-                                        <h4>
-                                            <p style='padding-left: 7px;'><a data-toggle='collapse' data-parent='#accordion' href='#c".$count."' style='font-size : 14px;'>Lista de Resultados</a></p>
-                                        </h4>
+                                    
+                                    <div id="v" class='panel-collapse collapse'>
+                                        <div class='panel-body' >
+                                        <a href='' ><li style='list-style:none;'>Lista de  Habiles</a></li>
+                                        
+
                                     </div>
+
+                                    
                         </div>
                     </div>  
                 </div>

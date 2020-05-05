@@ -1,9 +1,9 @@
 <?php 
-//session_start(); 
-//$yes = $_SESSION['log']; 
-//$cod = $_SESSION['cod'];
-//$ids = $_SESSION['usr'];
-//valor= $_GET['m'];
+session_start(); 
+$yes = $_SESSION['log']; 
+$cod = $_SESSION['cod'];
+$ids = $_SESSION['usr'];
+$valor= $_GET['m'];
 include "includes/cabecera_home.inc";
 ?>
 <div class="container">

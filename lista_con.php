@@ -22,13 +22,13 @@ include "includes/cabecera_home.inc";
         <div id="page-wrapper"></br>
 			<ol class="breadcrumb">
 				<li><a href="home.php">Home</a></li>
-				<li class="active">Listado de Auxiliaturas</li>
+				<li class="active">Listado de Convocatorias</li>
 			</ol>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <i class="fa fa-user"></i> Listado de Auxiliaturas
+                            <i class="fa fa-user"></i> Listado de Convocatorias
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -39,10 +39,10 @@ include "includes/cabecera_home.inc";
 										<thead>
 											<tr>
 												<th>#</th>
-												<th>Cod. de la Auxiliatura</th>
-												<th>Nombre de la Auxiliatura </th>
-												<th>Cant.</th>
-												<th>Hrs. Acadenicas</th>
+												<th>Cod. Convocatoria</th>
+												<th>Nombre Convocatoria</th>
+												<th>Informacion</th>
+												<th>Editar</th>
 												
 											</tr>
 										</thead>
@@ -51,7 +51,7 @@ include "includes/cabecera_home.inc";
 											include_once('conexion.php');
 											$conexion=Conectar();
 											$cont=0;
-											$consulta="select * from auxiliatura";
+											$consulta="select * from convocatoria";
 											$query=mysqli_query($conexion,$consulta);	
 											$identi=0;
 											while($dato=mysqli_fetch_array($query))
@@ -60,10 +60,10 @@ include "includes/cabecera_home.inc";
 												?>
 												<tr>
 													<td><?php  echo "".$cont."";?></td>
-													<td><?php  echo "".$dato['COD_AUXILIATURA']."";?></td>
-													<td ><?php  echo "".$dato['NOM_AUXILIATURA']."";?></td>
-													<td ><?php  echo "".$dato['CANT_AUX']."";?></td>
-													<td ><?php  echo "".$dato['HRS_AUXILIATURA']."";?></td>
+													<td><?php  echo "".$dato['COD_CONVOCATORIA']."";?></td>
+													<td ><?php  echo "".$dato['NOM_CONVOCATORIA']."";?></td>
+													<td ></td>
+													<td ></td>
 													
 												
 												<?php  
@@ -79,7 +79,7 @@ include "includes/cabecera_home.inc";
 									<?php echo "<input type=\"hidden\" id=count name=count value=".$identi." ></input>"; ?>
 									<div class="control-group">
 										<div class="controls">
-											<a a href="#new_user" data-toggle="modal" class="btn btn-primary btn-sm"></i> Nueva Auxiliatura</a>
+											<a a href="#new_user" data-toggle="modal" class="btn btn-primary btn-sm"></i> Nueva Convocatoria</a>
 											
 											
 										</div>
@@ -103,44 +103,45 @@ include "includes/cabecera_home.inc";
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title"></i>Llenar los datos de la Auxliatura - Laboratorio</h4>
+					<h4 class="modal-title"></i>Llenar los datos de la Convocatoria para Laboratorio</h4>
+					<h4 class="modal-title"></i>Paso 1 de 3</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-signin" action="new_aux.php" method="post" enctype="multipart/form-data">
+					<form class="form-signin" action="crear_requisitos.php" method="post" enctype="multipart/form-data">
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-							<label>Codigo </label>
+							<label>Codigo</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon" ></span>
-								<input type="text" class="form-control" name="cod_aux" id="cod_aux" required placeholder="Codido de la auxiliatura">
+								<input type="text" class="form-control" name="cod_aux" id="cod_aux" required placeholder="Codido de la Convocatoria">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-							<label>Nombre  </label>
+							<label>Nombre</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="nom_aux" id="nom?aux" required placeholder="Nombre de la auxiliatura">
+								<input type="text" class="form-control" name="nom_aux" id="nom?aux" required placeholder="Nombre de la Convocatoria">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-							<label>Cantidad </label>
+							<label>Fecha Inicio</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="cant_aux" id="hrs_aux" required placeholder="Cantidad de Auxiliares">
+								<input type="date" class="form-control" name="cant_aux" id="hrs_aux" required placeholder="Cantidad de Auxiliares">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-							<label>Hrs/mes </label>
+							<label>Fecha Conclusion</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="hrs_aux" id="hrs_aux" required placeholder="Numero de Horas por mes">
+								<input type="date" class="form-control" name="hrs_aux" id="hrs_aux" required placeholder="Numero de Horas por mes">
 							</div>
 						</div>
 						
@@ -148,7 +149,7 @@ include "includes/cabecera_home.inc";
 						
 						
 						<div class="modal-footer">
-							</br><button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_user"></i>Crear Auxiliatura</button>
+							</br><button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_user"></i>Ir a Paso 2</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->

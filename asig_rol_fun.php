@@ -1,12 +1,11 @@
 <?php 
-
 session_start(); 
 $yes = $_SESSION['log']; 
 $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
 
 $valor= $_GET['m'];
-        
+    
 include "includes/cabecera_home.inc";
 ?>
 <div class="container">
@@ -19,7 +18,7 @@ include "includes/cabecera_home.inc";
         <div id="page-wrapper"></br>
 			<ol class="breadcrumb">
 				<li><a href="home.php">Home</a></li>
-				<li class="active"> Listado de Formularios del Sistema</li>
+				<li class="active"> Listado de Funciones por Rol</li>
 			</ol>
             <div class="row">
 				<?php
@@ -49,7 +48,7 @@ include "includes/cabecera_home.inc";
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-briefcase"></i> Listado de Formularios del Sistema
+                            <i class="fa fa-university"></i> Listado de Funciones por Rol
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -58,11 +57,9 @@ include "includes/cabecera_home.inc";
 										<thead>
 											<tr>
 												<th>#</th>
-												
-												<th>Formulario</th>
-													
-												<th>Descripcion</th>
-												
+												<th>Rol</th>
+												<th>Funcion</th>
+												<th>Eliminar</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -70,28 +67,30 @@ include "includes/cabecera_home.inc";
 											include_once('conexion.php');
 											$conexion=Conectar();
 											$cont=0;
-											$consulta="select * from formulario";
+											$consulta="select * from rol,funcion,rol_fun where rol.ID_ROL = rol_fun.ID_ROL and rol_fun.id_funcion = funcion.id_funcion";
 											$query=mysqli_query($conexion, $consulta);	
 											$identi=0;
+											
 											while($dato=mysqli_fetch_array($query))
 											{
 												$cont++;
-												?>
+												echo "
 												<tr>
-													<td ><?php echo "".$cont.""; ?></td>
-													
-													<td><?php echo "".$dato['NOM_FORMULARIO'].""; ?></td>
-													<td ><?php echo "".$dato['DES_FORMULARIO'].""; ?></td>
-													
-													<?php  
+													<td >".$cont."</td>
+													<td>".$dato["NOM_ROL"]."</td>
+													<td >".$dato["NOM_FUNCION"]."</td>
+													<td ><center><a href ='del_rol_func.php?id=".$dato['ID_ROL_FUN']."'><img src='img/eliminar.png' height='32' width='32'/></a></center></td>";
 											}
-											?>
-										
+										?>
 										</tbody>
 										
 									</table>
-									
-								</div>
+									<div class="control-group">
+										<div class="controls">
+											<a a href="#new_rol_func" data-toggle="modal" class="btn btn-primary btn-sm"><i class="fa fa-plus-square"></i> Nuevo</a>
+										</div>
+									</div>
+								</div>   
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -103,53 +102,60 @@ include "includes/cabecera_home.inc";
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
-	<div id="new_form" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+
+	<div id="new_rol_func" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title"> <i class="fa fa-plus-square"></i> Nuevo Formulario del Sistema</h4>
+					<h4 class="modal-title"> <i class="fa fa-plus-square"></i> Asignar Funcion para cada Rol</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-signin" action="configure.php" method="post" enctype="multipart/form-data">
+					<form class="form-signin" action="configuracion.php" method="post" enctype="multipart/form-data">
 						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-							<label>Formulario </label>
+							<label>Rol</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
-								<span class="input-group-addon"><img src="img/formulario.png" width=20 height=20></span>
-								<input type="text" class="form-control" name="form" id="form" required>
+								<span class="input-group-addon"></span>
+								<select class="form-control" name='rol1' id="rol1" required>
+									<option value="">--Seleccione Rol--</option>
+									<?php
+										$consulta1="select * from rol";
+										$query1=mysqlI_query($conexion, $consulta1);
+										while($dato1=mysqlI_fetch_array($query1)){
+										?>
+											<option value="<?php echo $dato1['ID_ROL']; ?>"><?php echo $dato1['NOM_ROL']; ?></option>
+										<?php 
+										} 
+										?>
+								</select>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-							<label>URL</label>
+							<label>Funcion</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
-								<span class="input-group-addon"><img src="img/url.png" width=20 height=20></span>
-								<input type="text" class="form-control" name="url_form" id="url_form" required>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-							<label>Descripcion</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-							<div class="input-group">
-								<span class="input-group-addon"><img src="img/descripcion.png" width=20 height=20></span>
-								<input type="text" class="form-control" name="des_form" id="des_form" required>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-							<label>Imagen </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-							<div class="input-group">
-								<span class="input-group-addon"><img src="img/foto.png" width=20 height=20></span>
-								<input type="file" class="form-control" name="img_form" id="img_form">
+								<span class="input-group-addon"></span>
+								<select class="form-control" name='func1' id="func1" required>
+									<option value="">--Seleccione Funcion--</option>
+									<?php
+										$consulta1="select * from funcion";
+										$query1=mysqli_query($conexion, $consulta1);
+										while($dato1=mysqli_fetch_array($query1)){
+										?>
+											<option value="<?php echo $dato1['ID_FUNCION']; ?>"><?php echo $dato1['NOM_FUNCION']; ?></option>
+										<?php 
+										} 
+										?>
+								</select>
 							</div>
 						</div>
 						<div class="modal-footer">
-							</br><button name="insert_form" type="submit" class="btn btn-success btn-sm" id="insert_form"><i class="fa fa-check"></i> Insertar Datos</button>
+							</br><button name="asig_rol" type="submit" class="btn btn-success btn-sm" id="asig_rol"><i class="fa fa-check"></i> Insertar Datos</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->

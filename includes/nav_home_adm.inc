@@ -5,11 +5,11 @@ $conexion=Conectar();
 $consulta="select * from usuario as u, usu_rol as ur,rol as r ,rol_fun as rf,funcion as f 
    where u.COD_USUARIO=ur.COD_USUARIO and ur.ID_ROL = r.ID_ROL 
    and r.ID_ROL = rf.ID_ROL 
-   and rf.ID_FUN = f.ID_FUN 
+   and rf.ID_FUNCION = f.ID_FUNCION 
    and u.COD_USUARIO='$cod'";
 
 $query4=mysqli_query($conexion,$consulta);
-$cont = mysqli_num_rows($query);
+$cont4 = mysqli_num_rows($query4);
 
 ?>
 <!-- Navigation -->
@@ -36,7 +36,7 @@ $cont = mysqli_num_rows($query);
                         <i class="fa fa-user"></i><b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="log_adm.php"><i class="fa fa-sign-out fa-fw"></i>
+                        <li><a href="home.php"><i class="fa fa-sign-out fa-fw"></i>
                         Salir</a>
                         </li>
                        
@@ -52,24 +52,42 @@ $cont = mysqli_num_rows($query);
                     <div class="color2" style="border-radius: 5px;">
                         <h3 class="centrar3" style="color: white;">Menu</h3>
                     </div>
-                    <div class="panel-group" id="accordion">
+                     <div class="panel-group" id="accordion">
                         <div class="panel panel-default">
-                           
+                            <?php 
+                            $count=0;
+
+                            //echo "el valor de cont4 es ----> ".$cont4;
+                            if($cont4 == 0){
+                            echo "
+                                <center><b> No tiene Ninguna Funcion Definida</b></center>";
+                            }
+                            else{
+                                while($dato4=mysqli_fetch_array($query4)){
+                                $count++;
+                                echo "
                                     <div class='panel-heading' style='padding: 1px;'>
                                         <h4>
-                                            <p style='padding-left: 7px;'><a data-toggle='collapse' data-parent='#accordion' href='#c".$count."' style='font-size : 14px;'>Convocatorias</a></p>
+                                            <p style='padding-left: 7px;'><a data-toggle='collapse' data-parent='#accordion' href='#c".$count."' style='font-size : 14px;'>".$dato4["NOM_FUNCION"]."</a></p>
                                         </h4>
                                     </div>
-                                    <div class='panel-heading' style='padding: 1px;'>
-                                        <h4>
-                                            <p style='padding-left: 7px;'><a data-toggle='collapse' data-parent='#accordion' href='#c".$count."' style='font-size : 14px;'>Lista de Habilitados</a></p>
-                                        </h4>
-                                    </div>
-                                    <div class='panel-heading' style='padding: 1px;'>
-                                        <h4>
-                                            <p style='padding-left: 7px;'><a data-toggle='collapse' data-parent='#accordion' href='#c".$count."' style='font-size : 14px;'>Lista de Resultados</a></p>
-                                        </h4>
-                                    </div>
+                                    
+                                    <div id='c".$count."' class='panel-collapse collapse'>
+                                        <div class='panel-body' >
+                                ";
+                                    $consulta5="select * from funcion as f ,fun_for as ff ,formulario as form where f.id_funcion=ff.id_funcion and ff.id_formulario= form.id_formulario and f.id_funcion='".$dato4["ID_FUNCION"]."' ";
+                                    $query5=mysqli_query($conexion, $consulta5);
+                                    while($dato5=mysqli_fetch_array($query5)){
+                                        echo "
+                                            <a href='".$dato5["URL_FORMULARIO"]."?m=0' ><li style='list-style:none;'>".$dato5["NOM_FORMULARIO"]."</a></li>
+                                        ";
+                                    }   
+                                        echo'
+                                        </div>
+                                    </div>';
+                                }
+                            }
+                            ?>  
                         </div>
                     </div>  
                 </div>
