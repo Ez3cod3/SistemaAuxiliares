@@ -4,6 +4,14 @@ $yes = $_SESSION['log'];
 $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
 
+include_once('conexion.php');
+$conexion=Conectar();
+$cont=0;
+$consulta="select * from usuario where COD_USUARIO = '$cod'";
+$query=mysqli_query($conexion,$consulta);	
+$identi=0;
+$dato=mysqli_fetch_array($query);
+
 include "includes/cabecera_home.inc";
 ?>
 
@@ -27,34 +35,9 @@ include "includes/cabecera_home.inc";
 					</div>
 				</div>
 			</section>
-			<h3><b style="color:blue;">Noticias</b></h3><hr>
+			<h3><b style="color:blue;">Usuario: <?php echo "".$dato['NOM_USUARIO'].""; ?> </b></h3><hr>
 			
-						<section>
-							<div class='row'>
-								<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-									<div class='row'>
-										
-										<div class='col-xs-12 col-sm-9 col-md-6 col-lg-6'>
-											<h3 style="color:black;">Convocatoria para Auxiliatura</h3><hr>
-											<p align='justify' style="color:black;">Descripcion de la convocatoria<br><a href='convocatoria.php'>leer más</a></p>
-										</div>
-										<div class='hidden-xs col-sm-3 col-md-4 col-lg-4'>
 						
-											<h3 style='color:green;'>Descarga PDF</h3><hr>
-											<ul>
-												<div class='btn-group-vertical'>
-												
-												<div class='btn-group'>
-												<button type='button' class='btn btn-default btn-sm' data-toggle='tooltip' data-placement='center' title='pdf'><img src='img/iconoPDF.png' height='20' width='20'/></button>
-											
-												</div>
-											</ul>
-										</div>
-										
-									</div>
-								</div>
-							</div>
-					
         </div>
         <!-- /#page-wrapper -->
 

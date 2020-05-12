@@ -31,9 +31,9 @@ include "includes/cabecera_home.inc";
 										<thead>
 											<tr>
 												<th>#</th>
-												<th>Codigo Convocatoria</th>
-												<th>Nombre Auxiliatura</th>
-												<th>Lista Postulantes</th>
+												<th>Postulante</th>
+												<th>Calificarcion</th>
+												
 											</tr>
 										</thead>
 										<tbody>
@@ -41,7 +41,7 @@ include "includes/cabecera_home.inc";
 											include_once('conexion.php');
 											$conexion=Conectar();
 											$cont=0;
-											$consulta="select * from convocatoria as con, auxiliatura as aux where con.COD_AUXILIATURA = aux.COD_AUXILIATURA";
+											$consulta="select * from convocatoria as con, auxiliatura as aux, postulante as ps, postulacion as pos where con.COD_AUXILIATURA = aux.COD_AUXILIATURA";
 											$query=mysqli_query($conexion, $consulta);	
 											$identi=0;
 											while($dato=mysqli_fetch_array($query))
@@ -54,7 +54,7 @@ include "includes/cabecera_home.inc";
 													<td ><?php echo "$cont"; ?></td>
 													<td><?php echo "".$dato['COD_CONVOCATORIA'].""; ?></td>
 													<td ><?php echo "".$dato['NOM_AUXILIATURA'].""; ?></td>
-													<td ><center><a href ='lista_post_con.php'><img src='img/editar.png' height='32' width='32'/></a></center></td>
+													
 													
 										<?php
 											}

@@ -42,8 +42,8 @@
                                     
                                     <div id="c" class='panel-collapse collapse'>
                                         <div class='panel-body' >
-                                        <a href='' ><li style='list-style:none;'>Convocatorias Habiles</a></li>
-                                        <a href='' ><li style='list-style:none;'>Convocatorias Pasadas</a></li>
+                                        <a href='' ><li style='list-style:none;'>Convocatorias - Laboratorios</a></li>
+                                        <a href='' ><li style='list-style:none;'>Convocatorias - Docencia </a></li>
                                         </div>
 
                                     </div>

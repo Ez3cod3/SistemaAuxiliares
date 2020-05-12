@@ -16,13 +16,13 @@ include "includes/cabecera_home.inc";
         <div id="page-wrapper">
 			<ol class="breadcrumb">
 				<li><a href="home.php">Home</a></li>
-				<li class="active"> Listado de Postulaciones</li>
+				<li class="active"> Listado de Postulaciones - Laboratorios</li>
 			</ol>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-briefcase"></i> Listado de Postulaciones por Convocatoria
+                            <i class="fa fa-briefcase"></i> Listado de Postulaciones por Convocatoria - Laboratorios
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -31,9 +31,10 @@ include "includes/cabecera_home.inc";
 										<thead>
 											<tr>
 												<th>#</th>
-												<th>Codigo Convocatoria</th>
-												<th>Nombre Auxiliatura</th>
-												<th>Lista Postulantes</th>
+												<th>Convocatoria</th>
+												<th>Calif. Meritos</th>
+												<th>Calif. Conocimentos</th>
+												
 											</tr>
 										</thead>
 										<tbody>
@@ -41,7 +42,7 @@ include "includes/cabecera_home.inc";
 											include_once('conexion.php');
 											$conexion=Conectar();
 											$cont=0;
-											$consulta="select * from convocatoria as con, auxiliatura as aux where con.COD_AUXILIATURA = aux.COD_AUXILIATURA";
+											$consulta="select * from convocatoria";
 											$query=mysqli_query($conexion, $consulta);	
 											$identi=0;
 											while($dato=mysqli_fetch_array($query))
@@ -52,9 +53,10 @@ include "includes/cabecera_home.inc";
 												
 												<tr>
 													<td ><?php echo "$cont"; ?></td>
-													<td><?php echo "".$dato['COD_CONVOCATORIA'].""; ?></td>
-													<td ><?php echo "".$dato['NOM_AUXILIATURA'].""; ?></td>
-													<td ><center><a href ='lista_post_con.php'><img src='img/editar.png' height='32' width='32'/></a></center></td>
+													<td ><?php echo "".$dato['NOM_CONVOCATORIA'].""; ?></td>
+													<td><a href="calificacion_meritos.php?cod=<?php echo "".$dato['COD_CONVOCATORIA'].""; ?>" class="btn btn-primary btn-sm"></i>Ir</a></td>
+													<td ><a href="calificacion_concimientos.php?cod=<?php echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Ir</a></td>
+													
 													
 										<?php
 											}

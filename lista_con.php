@@ -28,7 +28,7 @@ include "includes/cabecera_home.inc";
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <i class="fa fa-user"></i> Listado de Convocatorias
+                            <i class="fa fa-user"></i> Listado de Convocatorias - Laboratorios
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -41,7 +41,10 @@ include "includes/cabecera_home.inc";
 												<th>#</th>
 												<th>Cod. Convocatoria</th>
 												<th>Nombre Convocatoria</th>
+												<th>Auxiliaturas</th>
 												<th>Informacion</th>
+												<th>Requisitos</th>
+												<th>Areas Evaluacion</th>
 												<th>Editar</th>
 												
 											</tr>
@@ -63,7 +66,42 @@ include "includes/cabecera_home.inc";
 													<td><?php  echo "".$dato['COD_CONVOCATORIA']."";?></td>
 													<td ><?php  echo "".$dato['NOM_CONVOCATORIA']."";?></td>
 													<td ></td>
-													<td ></td>
+
+													<?php
+													$consulta2= "select * from requisito where COD_CONVOCATORIA = '$cod'";
+													$query2=mysqli_query($conexion,$consulta2);
+													if (mysqli_fetch_array($query)) {
+													?>
+													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
+													<?php
+													}
+													else 
+													{
+														?>
+														<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Ver</a></td>
+														<?php
+													}
+													?>
+
+													<?php
+													$consulta3= "select * from requisito where COD_CONVOCATORIA = '$cod'";
+													$query2=mysqli_query($conexion,$consulta3);
+													if (mysqli_fetch_array($query)) {
+													?>
+													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
+													<?php
+													}
+													else 
+													{
+														?>
+														<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Ver</a></td>
+														<?php
+													}
+													?>
+													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
+													<td ><a  href="#new_user" data-toggle="modal" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
+													
+												
 													
 												
 												<?php  
@@ -107,14 +145,14 @@ include "includes/cabecera_home.inc";
 					<h4 class="modal-title"></i>Paso 1 de 3</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-signin" action="crear_requisitos.php" method="post" enctype="multipart/form-data">
+					<form class="form-signin" action="requisito_con.php" method="post" enctype="multipart/form-data">
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 							<label>Codigo</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon" ></span>
-								<input type="text" class="form-control" name="cod_aux" id="cod_aux" required placeholder="Codido de la Convocatoria">
+								<input type="text" class="form-control" name="cod_con" id="cod_aux" required placeholder="Codido de la Convocatoria">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -123,7 +161,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="nom_aux" id="nom?aux" required placeholder="Nombre de la Convocatoria">
+								<input type="text" class="form-control" name="nom_con" id="nom_con" required placeholder="Nombre de la Convocatoria">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -132,7 +170,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="date" class="form-control" name="cant_aux" id="hrs_aux" required placeholder="Cantidad de Auxiliares">
+								<input type="date" class="form-control" name="fecha_ini" id="fecha_ini" required placeholder="Cantidad de Auxiliares">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -141,7 +179,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="date" class="form-control" name="hrs_aux" id="hrs_aux" required placeholder="Numero de Horas por mes">
+								<input type="date" class="form-control" name="fecha_fin" id="fecha_fin" required placeholder="Numero de Horas por mes">
 							</div>
 						</div>
 						

@@ -103,6 +103,18 @@ $dato= mysqli_fetch_array($sql);
 																	<input type="text" class="form-control" minlength="4" name="ci_pos" id="ci_pos">
 																</div>
 															</div>
+															<div class="col-xs-15 col-sm-15 col-md-8 col-lg-8">
+																<label>Seleccione la Auxiliatura a la que desea postularse </label>
+															</div>
+															<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+																<div class="input-group">
+																	<span class="input-group-addon" ><img src="img/punto_rojo.png" width=10 height=10></span>
+																	<select class="form-control" minlength="4" name="ci_pos" id="ci_pos">
+																		<option value="">---Seleccionar Auxiliatura---</option>
+																		<option value="">Aux1</option>
+																		</select> 
+																</div>
+															</div>
 															<div class="btn-group"><br>
 																<center>
 																	<button href="reg_con.php" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Enviar Postulacion</button>

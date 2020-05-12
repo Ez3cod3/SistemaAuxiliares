@@ -22,6 +22,7 @@ $cont4 = mysqli_num_rows($query4);
                     <span class="icon-bar"></span>
                 </button>
                 <a href="#" class="navbar-brand"> <i class="fa fa-th-large"></i> UMSS</a>
+                 <a class="navbar-brand"> <i class="fa fa-user fa-fw"></i> <?php echo" ".$cod." ";?></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -29,20 +30,12 @@ $cont4 = mysqli_num_rows($query4);
                 <li class="fa fa-calendar"></i><?php echo" ".$hoy." ";?></li>
                
                 <li class="fa fa-clock-o" id="liveclock"></li>
+                 <li><a href="home.php"><i class="fa fa-sign-out fa-fw"></i>
+                        Cerrar Sesion</a>
+                        </li>
 
                 <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-user"></i><b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="home.php"><i class="fa fa-sign-out fa-fw"></i>
-                        Salir</a>
-                        </li>
-                       
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
+                
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->

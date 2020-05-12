@@ -1,9 +1,9 @@
 <?php 
-session_start(); 
-$yes = $_SESSION['log']; 
-$cod = $_SESSION['cod'];
-$ids = $_SESSION['usr'];
-$valor= $_GET['m'];
+//session_start(); 
+//$yes = $_SESSION['log']; 
+//$cod = $_SESSION['cod'];
+//$ids = $_SESSION['usr'];
+//valor= $_GET['m'];
 include "includes/cabecera_home.inc";
 ?>
 <div class="container">
@@ -54,8 +54,8 @@ include "includes/cabecera_home.inc";
 													<td ><?php echo "$cont"; ?></td>
 													<td><?php echo "".$dato['COD_CONVOCATORIA'].""; ?></td>
 													<td ><?php echo "".$dato['NOM_AUXILIATURA'].""; ?></td>
-													<td ><center><a href ='lista_post_con.php'><img src='img/editar.png' height='32' width='32'/></a></center></td>
-													
+													<td ><center><a href ='upd_rol.php?id=".$dato['']."'><img src='img/editar.png' height='32' width='32'/></a></center></td>
+													<td ><center><a href =""></a></center></td>
 										<?php
 											}
 										?>
