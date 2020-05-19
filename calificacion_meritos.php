@@ -79,7 +79,7 @@ include "includes/cabecera_home.inc";
 													
 
 													 
-													<td><a href="calif_meritos.php?cod=<?php echo "$con"; ?>&post=<?php echo "".$dato['ID_POSTULANTE'].""; ?>&postu=<?php echo "".$dato['ID_POSTULACION'].""; ?>" class="btn btn-primary btn-sm"></i>Por Validar</a></td>
+													
 													<td ><a href="calificacion_concimientos.php" class="btn btn-primary btn-sm"></i>Editar</a></td>
 													
 													
