@@ -3,7 +3,7 @@ session_start();
 $yes = $_SESSION['log']; 
 $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
-$valor= $_GET['m'];
+$aux= $_GET['cod'];
 include "includes/cabecera_home.inc";
 ?>
 <div class="container">
@@ -41,7 +41,7 @@ include "includes/cabecera_home.inc";
 											include_once('conexion.php');
 											$conexion=Conectar();
 											$cont=0;
-											$consulta="select * from convocatoria as con, auxiliatura as aux, postulante as ps, postulacion as pos where con.COD_AUXILIATURA = aux.COD_AUXILIATURA";
+											$consulta="select * from convocatoria, postulante, postulacion where convocatoria.COD_CONVOCATORIA = postulacion.COD_CONVOCATORIA and postulante.ID_POSTULANTE = postulacion.ID_POSTULANTE and convocatoria.COD_CONVOCATORIA = '$aux' ";
 											$query=mysqli_query($conexion, $consulta);	
 											$identi=0;
 											while($dato=mysqli_fetch_array($query))
@@ -52,8 +52,8 @@ include "includes/cabecera_home.inc";
 												
 												<tr>
 													<td ><?php echo "$cont"; ?></td>
-													<td><?php echo "".$dato['COD_CONVOCATORIA'].""; ?></td>
-													<td ><?php echo "".$dato['NOM_AUXILIATURA'].""; ?></td>
+													<td><?php echo "".$dato['NOM_POSTULANTE'].""; ?></td>
+													<td ><?php echo "".$dato['COD_AUXILIATURA'].""; ?></td>
 													
 													
 										<?php

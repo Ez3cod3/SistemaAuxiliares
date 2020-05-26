@@ -5,7 +5,7 @@ $yes = $_SESSION['log'];
 $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
 
-$cod = $_GET['cod'];
+$con = $_GET['con'];
     
 include "includes/cabecera_home.inc";
 ?>
@@ -30,7 +30,7 @@ include "includes/cabecera_home.inc";
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <i class="fa fa-user"></i>Paso 4 - Listado de Auxiliaturas vinculdas a la convocatoria - <?php  echo "".$cod."";?>
+                            <i class="fa fa-user"></i>Paso 4 - Listado de Auxiliaturas vinculdas a la convocatoria - <?php  echo "".$con."";?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -53,7 +53,7 @@ include "includes/cabecera_home.inc";
 											include_once('conexion.php');
 											$conexion=Conectar();
 											$cont=0;
-											$consulta="select * from requisito where COD_CONVOCATORIA = '$cod'";
+											$consulta="select * from con_aux, auxiliatura where con_aux.COD_CONVOCATORIA = '$con' and con_aux.COD_AUXILIATURA = auxiliatura.COD_AUXILIATURA";
 											$query=mysqli_query($conexion,$consulta);	
 											$identi=0;
 											while($dato=mysqli_fetch_array($query))
@@ -62,10 +62,12 @@ include "includes/cabecera_home.inc";
 												?>
 												<tr>
 													<td><?php  echo "".$cont."";?></td>
-													<td><?php  echo "".$dato['DES_REQUISITO']."";?></td>
+													<td><?php  echo "".$dato['COD_AUXILIATURA']."";?></td>
 													
-													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
-													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
+													<td><?php  echo "".$dato['NOM_AUXILIATURA']."";?></td>
+													
+													
+													
 													
 													
 													
@@ -80,11 +82,11 @@ include "includes/cabecera_home.inc";
 										</tbody>
 										
 									</table>
-									<?php echo "<input type=\"hidden\" id=count name=count value=".$identi." ></input>"; ?>
+									
 									<div class="control-group">
 										<div class="controls">
 											<a a href="#new_user" data-toggle="modal" class="btn btn-primary btn-sm"></i> Ingresar nuevo dato</a>
-											<a href="pruebas_con.php"  class="btn btn-primary btn-sm"></i> Ir a Paso 5  </a>
+											<a href="pruebas_con.php?con=<?php echo"$con"; ?>"  class="btn btn-primary btn-sm"></i> Ir a Paso 5  </a>
 											
 											
 										</div>
@@ -112,14 +114,26 @@ include "includes/cabecera_home.inc";
 					
 				</div>
 				<div class="modal-body">
-					<form class="form-signin" action="new_requisito.php?cod=<?php echo"$cod" ?>" method="post" enctype="multipart/form-data">
+					<form class="form-signin" action="crear_convocatoria_lab.php?con=<?php echo"$con"; ?>" method="post" enctype="multipart/form-data">
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 							<label>Seleccione una Auxiliatura:</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon" ></span>
-								<input type="text" class="form-control" name="requisito" id="requisito" required placeholder="Escriba...">
+								<select name="auxiliatura" id="auxiliatura" class="form-control"> 
+									<option value="">--Seleccione una Auxiliatura</option>
+									<?php 
+										$consulta1="select * from auxiliatura";
+										$query1 = mysqli_query($conexion, $consulta1);
+
+										while ($dato1=mysqli_fetch_array($query1)) {
+										?>
+										<option value='<?php echo"".$dato1['COD_AUXILIATURA'].""; ?>'><?php echo"".$dato1['NOM_AUXILIATURA'].""; ?></option>
+										<?php  
+									}
+									 ?>
+								</select>
 							</div>
 						</div>
 						
@@ -128,7 +142,7 @@ include "includes/cabecera_home.inc";
 						
 						
 						<div class="modal-footer">
-							</br><button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_user"></i>Ingresar Datos</button>
+							</br><button name="new_aux" type="submit" class="btn btn-success btn-sm" id="new_aux"></i>Ingresar Datos</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->

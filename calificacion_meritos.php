@@ -3,7 +3,7 @@ session_start();
 $yes = $_SESSION['log']; 
 $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
-$con= $_GET['cod'];
+$con= $_GET['con'];
 include "includes/cabecera_home.inc";
 ?>
 <div class="container">
@@ -59,8 +59,8 @@ include "includes/cabecera_home.inc";
 													$conexion=Conectar();
 													$aux1 = $dato['ID_POSTULACION'];
 													$aux2 = $dato['COD_CONVOCATORIA'];
-													$aux3 = 1;
-													$consulta1="select * from nota where ID_POSTULACION = '$aux1' and COD_CONVOCATORIA = '$aux2' and TIPO_NOTA = '$aux3' ";
+													$aux3 = 0;
+													$consulta1="select * from nota where ID_POSTULACION = '$aux1' and COD_CONVOCATORIA = '$aux2' and NOTA_MERITOS = '$aux3' ";
 													$query1=mysqli_query($conexion, $consulta1);
 
 													if ($dato1=mysqli_fetch_array($query1)) 
@@ -89,7 +89,14 @@ include "includes/cabecera_home.inc";
 										</tbody>
 										
 									</table>
-									
+									<div class="control-group">
+										<div class="controls">
+											<a a href="crearPdf.php?con=<?php echo "$con"; ?>" class="btn btn-primary btn-sm"></i> Ingresar nuevo dato</a>
+											<a href="puntaje_pruebas_con.php"  class="btn btn-primary btn-sm"></i> Ir a Paso 6  </a>
+											
+											
+										</div>
+									</div>
 								</div>
                         </div>
                         <!-- /.panel-body -->

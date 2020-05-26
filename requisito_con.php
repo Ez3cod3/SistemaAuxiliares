@@ -5,7 +5,7 @@ $yes = $_SESSION['log'];
 $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
 
-$cod = $_GET['cod'];
+$con = $_GET['con'];
     
 include "includes/cabecera_home.inc";
 ?>
@@ -30,7 +30,7 @@ include "includes/cabecera_home.inc";
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <i class="fa fa-user"></i>Paso 2 - Listado de Documentacio a Presentar - <?php  echo "".$cod."";?>
+                            <i class="fa fa-user"></i>Paso 2 - Listado de Requisitos a Presentar - <?php  echo "".$con."";?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -51,7 +51,7 @@ include "includes/cabecera_home.inc";
 											include_once('conexion.php');
 											$conexion=Conectar();
 											$cont=0;
-											$consulta="select * from requisito where COD_CONVOCATORIA = '$cod'";
+											$consulta="select * from requisito where COD_CONVOCATORIA = '$con'";
 											$query=mysqli_query($conexion,$consulta);	
 											$identi=0;
 											while($dato=mysqli_fetch_array($query))
@@ -72,11 +72,11 @@ include "includes/cabecera_home.inc";
 										</tbody>
 										
 									</table>
-									<?php echo "<input type=\"hidden\" id=count name=count value=".$identi." ></input>"; ?>
+									
 									<div class="control-group">
 										<div class="controls">
 											<a a href="#new_user" data-toggle="modal" class="btn btn-primary btn-sm"></i> Nuevo Requisito</a>
-											<a href="documento_con.php" class="btn btn-primary btn-sm"></i> Ir a Paso 3</a>
+											<a href="documento_con.php?con=<?php echo"$con" ?>" class="btn btn-primary btn-sm"></i> Ir a Paso 3</a>
 											
 											
 										</div>
@@ -104,7 +104,7 @@ include "includes/cabecera_home.inc";
 					
 				</div>
 				<div class="modal-body">
-					<form class="form-signin" action="new_requisito.php?cod=<?php echo"$cod" ?>" method="post" enctype="multipart/form-data">
+					<form class="form-signin" action="crear_convocatoria_lab.php?con=<?php echo"$con" ?>" method="post" enctype="multipart/form-data">
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 							<label>Escriba el requerimiento:</label>
 						</div>
@@ -120,7 +120,7 @@ include "includes/cabecera_home.inc";
 						
 						
 						<div class="modal-footer">
-							</br><button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_user"></i>Ingresar Datos</button>
+							</br><button name="new_requisito" type="submit" class="btn btn-success btn-sm" id="new_user"></i>Ingresar Datos</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->

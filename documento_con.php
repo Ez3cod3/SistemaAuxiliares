@@ -5,7 +5,7 @@ $yes = $_SESSION['log'];
 $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
 
-$cod = $_GET['cod'];
+$con = $_GET['con'];
     
 include "includes/cabecera_home.inc";
 ?>
@@ -30,7 +30,7 @@ include "includes/cabecera_home.inc";
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <i class="fa fa-user"></i>Paso 3 - Listado de Documentos a Presentar - <?php  echo "".$cod."";?>
+                            <i class="fa fa-user"></i>Paso 3 - Listado de Documentos a Presentar - <?php  echo "".$con."";?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -42,8 +42,7 @@ include "includes/cabecera_home.inc";
 											<tr>
 												<th>#</th>
 												<th>Documentacion</th>
-												<th>Editar</th>
-												<th>Eliminar</th>
+												
 												
 												
 											</tr>
@@ -53,7 +52,7 @@ include "includes/cabecera_home.inc";
 											include_once('conexion.php');
 											$conexion=Conectar();
 											$cont=0;
-											$consulta="select * from requisito where COD_CONVOCATORIA = '$cod'";
+											$consulta="select * from documento where COD_CONVOCATORIA = '$con'";
 											$query=mysqli_query($conexion,$consulta);	
 											$identi=0;
 											while($dato=mysqli_fetch_array($query))
@@ -62,14 +61,8 @@ include "includes/cabecera_home.inc";
 												?>
 												<tr>
 													<td><?php  echo "".$cont."";?></td>
-													<td><?php  echo "".$dato['DES_REQUISITO']."";?></td>
+													<td><?php  echo "".$dato['DES_DOCUMENTO']."";?></td>
 													
-													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
-													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
-													
-													
-													
-												
 												<?php  
 
 
@@ -80,11 +73,11 @@ include "includes/cabecera_home.inc";
 										</tbody>
 										
 									</table>
-									<?php echo "<input type=\"hidden\" id=count name=count value=".$identi." ></input>"; ?>
+									
 									<div class="control-group">
 										<div class="controls">
 											<a a href="#new_user" data-toggle="modal" class="btn btn-primary btn-sm"></i> Ingresar nuevo dato</a>
-											<a href="auxiliatura_con.php"  class="btn btn-primary btn-sm"></i> Ir a Paso 4  </a>
+											<a href="auxiliatura_con.php?con=<?php echo"$con" ?>"  class="btn btn-primary btn-sm"></i> Ir a Paso 4  </a>
 											
 											
 										</div>
@@ -112,23 +105,19 @@ include "includes/cabecera_home.inc";
 					
 				</div>
 				<div class="modal-body">
-					<form class="form-signin" action="new_requisito.php?cod=<?php echo"$cod" ?>" method="post" enctype="multipart/form-data">
+					<form class="form-signin" action="crear_convocatoria_lab.php?con=<?php echo"$con" ?>" method="post" enctype="multipart/form-data">
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 							<label>Escriba la descripcion de la Documentacion:</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon" ></span>
-								<input type="text" class="form-control" name="requisito" id="requisito" required placeholder="Escriba...">
+								<input type="text" class="form-control" name="documento" id="documento" required placeholder="Escriba...">
 							</div>
 						</div>
-						
-						
-						
-						
-						
+					
 						<div class="modal-footer">
-							</br><button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_user"></i>Ingresar Datos</button>
+							</br><button name="new_doc" type="submit" class="btn btn-success btn-sm" id="new_doc"></i>Ingresar Datos</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->

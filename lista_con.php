@@ -114,7 +114,7 @@ include "includes/cabecera_home.inc";
 										</tbody>
 										
 									</table>
-									<?php echo "<input type=\"hidden\" id=count name=count value=".$identi." ></input>"; ?>
+									
 									<div class="control-group">
 										<div class="controls">
 											<a a href="#new_user" data-toggle="modal" class="btn btn-primary btn-sm"></i> Nueva Convocatoria</a>
@@ -145,14 +145,15 @@ include "includes/cabecera_home.inc";
 					<h4 class="modal-title"></i>Paso 1 de 3</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-signin" action="requisito_con.php" method="post" enctype="multipart/form-data">
+					<!-- aca empieza la ventana modal !-->
+					<form class="form-signin" action="crear_convocatoria_lab.php" method="post" enctype="multipart/form-data">
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 							<label>Codigo</label>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon" ></span>
-								<input type="text" class="form-control" name="cod_con" id="cod_aux" required placeholder="Codido de la Convocatoria">
+								<input type="text" class="form-control" name="cod_con" id="cod_con" required placeholder="Codido de la Convocatoria">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -170,7 +171,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="date" class="form-control" name="fecha_ini" id="fecha_ini" required placeholder="Cantidad de Auxiliares">
+								<input type="date" class="form-control" name="fecha_ini" id="fecha_ini" required>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -179,7 +180,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="date" class="form-control" name="fecha_fin" id="fecha_fin" required placeholder="Numero de Horas por mes">
+								<input type="date" class="form-control" name="fecha_fin" id="fecha_fin" required>
 							</div>
 						</div>
 						
@@ -187,7 +188,7 @@ include "includes/cabecera_home.inc";
 						
 						
 						<div class="modal-footer">
-							</br><button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_user"></i>Ir a Paso 2</button>
+							</br><button name="new_con" type="submit" class="btn btn-success btn-sm" id="new_con"></i>Ir a Paso 2</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->

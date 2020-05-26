@@ -268,7 +268,7 @@ include "includes/cabecera_home.inc";
 						
 
 						<div class="modal-footer">
-							<button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_user">Crear</button>
+							<button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_con">Crear</button>
 							<button  type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cerrar</button>
 						</div>												
 					</form>
