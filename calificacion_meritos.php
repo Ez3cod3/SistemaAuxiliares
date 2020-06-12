@@ -33,7 +33,7 @@ include "includes/cabecera_home.inc";
 												<th>#</th>
 												<th>Postulante</th>
 												<th>Calificacion</th>
-												<th>Editar</th>
+												
 												
 											</tr>
 										</thead>
@@ -80,7 +80,6 @@ include "includes/cabecera_home.inc";
 
 													 
 													
-													<td ><a href="calificacion_concimientos.php" class="btn btn-primary btn-sm"></i>Editar</a></td>
 													
 													
 										<?php
@@ -89,14 +88,7 @@ include "includes/cabecera_home.inc";
 										</tbody>
 										
 									</table>
-									<div class="control-group">
-										<div class="controls">
-											<a a href="crearPdf.php?con=<?php echo "$con"; ?>" class="btn btn-primary btn-sm"></i> Ingresar nuevo dato</a>
-											<a href="puntaje_pruebas_con.php"  class="btn btn-primary btn-sm"></i> Ir a Paso 6  </a>
-											
-											
-										</div>
-									</div>
+									
 								</div>
                         </div>
                         <!-- /.panel-body -->

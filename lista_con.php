@@ -66,6 +66,7 @@ include "includes/cabecera_home.inc";
 													<td><?php  echo "".$dato['COD_CONVOCATORIA']."";?></td>
 													<td ><?php  echo "".$dato['NOM_CONVOCATORIA']."";?></td>
 													<td ></td>
+													<!-->
 
 													<?php
 													$consulta2= "select * from requisito where COD_CONVOCATORIA = '$cod'";
@@ -109,7 +110,7 @@ include "includes/cabecera_home.inc";
 
 												$identi++;
 											}
-										?>
+										?></!-->
 										
 										</tbody>
 										
@@ -153,7 +154,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon" ></span>
-								<input type="text" class="form-control" name="cod_con" id="cod_con" required placeholder="Codido de la Convocatoria">
+								<input type="text" class="form-control" name="cod_con" id="cod_con" minlength="3" maxlength="8" required placeholder="Codido de la Convocatoria">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -162,7 +163,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="nom_con" id="nom_con" required placeholder="Nombre de la Convocatoria">
+								<input type="text" class="form-control" name="nom_con" id="nom_con" minlength="6" maxlength="100" required placeholder="Nombre de la Convocatoria">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">

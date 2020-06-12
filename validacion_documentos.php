@@ -36,14 +36,14 @@ include "includes/cabecera_home.inc";
         <div id="page-wrapper"><br>
 			<ol class="breadcrumb">
 				<li><a href="home.php">Home</a></li>
-				<li><a href="lis_user.php?m=0">Listado Materia</a></li>
-				<li class="active">Informacion Materia</li>
+				<li><a href="lis_user.php?m=0">Validacion - Documentacion</a></li>
+				
 			</ol>
 				<div class="col-lg-12">
 					
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-info-circle">Potulacion de <?php echo "".$dato1['NOM_POSTULANTE'].""; ?> </i> 
+                            <i class="fa fa-info-circle">Postulacion de <?php echo "".$dato1['NOM_POSTULANTE'].""; ?> </i> 
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -53,34 +53,38 @@ include "includes/cabecera_home.inc";
                             <div class="tab-content">
                                 <div class="tab-pane fade in active" id="bio">
                                     <div class="row">
-										<div id="map" class="col-xs-12 col-sm-4 col-md-5 col-lg-5">
-											<br><img src="<?php //echo $dato['FOTO_USER']; ?>" class="img-responsive">
+										<div id="map">
+											
 										</div>
 										<div class="col-xs-12 col-sm-8 col-md-7 col-lg-7">
 											<div class="account-wall">
-												<div id="my-tab-content" class="tab-content">																				
+												<div id="my-tab-content" class="tab-content">
+													<form action="validar_doc.php?con=<?php echo "".$con.""; ?>&pos=<?php echo "".$pos.""; ?>" method="post">
 													<div class="tab-pane active" id="login">
 														<?php
+														$cont=0;
 														while ($dato=mysqlI_fetch_array($query)) {
 														 	
-														
+														$cont++;
 
 														 ?>
 
-															<div class="col-xs-15 col-sm-15 col-md-8 col-lg-8">
+															<div >
 																<label><?php echo "".$dato['NOM_DOCUMENTO'].""; ?> </label>
 															</div>
-															<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-																<div class="input-group">
-																	<span class="input-group-addon" ><img src="img/usr.png" width=20 height=20></span>
-																	<input type="text" class="form-control" disabled value="<?php echo $dato['COD_MAT']; ?>">
-																</div>
-																<div class="btn-group">
-																	<center>
-																		<a a href="#act" data-toggle="modal" class="btn btn-primary btn-sm">Valida</a>
-																		<a href="list_carr.php?m=0" class="btn btn-warning btn-sm"> Invalido</a>										
-																	</center>
-									</div>
+															<div >
+																<div class="form-group" id="">
+							                                        
+							                                    <div class="radio">
+							                                        <label >
+							                                            <input type="radio" name="optradio[<?php echo $cont; ?>]" value="cumple" />Cumple
+							                                        </label>
+							                                        <label >
+							                                            <input type="radio" name="optradio[<?php echo $cont; ?>]" value="nocumple" checked />No Cumple
+							                                        </label>
+							                                    </div>
+							                                    
+							                                	</div>
 															</div>
 															
 															
@@ -88,20 +92,28 @@ include "includes/cabecera_home.inc";
 															 } 
 
 															?>
+															<div >
+																<div class="input-group">
+																	<label>Observaciones</label>
+																	<textarea name="obs" id="obs" cols="30" rows="10" class="form-control"></textarea>
+																</div>
+															</div>
 
 
 													</div>
+													<div class="btn-group">
+														
+														<center>
+															<button type="submit" class="btn btn-success" name="submit">Finalizar</button>
+																							
+														</center>
+													</div>
+													</form>
 												</div>
 											</div>		
 										</div>
 									</div></br>
-									<div class="btn-group">
-										<label>Validar esta postulacion</label>
-										<center>
-											<a a href="#act" data-toggle="modal" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Valida</a>
-											<a href="list_carr.php?m=0" class="btn btn-warning btn-sm"><i class="fa fa-hand-o-left"></i> Invalida</a>										
-										</center>
-									</div>
+									
 								</div>
                              </div>
                         </div>

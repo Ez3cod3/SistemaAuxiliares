@@ -79,8 +79,11 @@ include "includes/cabecera_home.inc";
 													<td >".$cont."</td>
 													<td>".$dato["NOM_FUNCION"]."</td>
 													<td >".$dato["DESCRIPCION_FUNCION"]."</td>
-													<td ><center><a href ='upd_func.php?id=".$dato['ID_FUNCION']."'><img src='img/editar.png' height='32' width='32'/></a></center></td>
-													<td ><center><a href ='del_func.php?id=".$dato['ID_FUNCION']."'><img src='img/eliminar.png' height='32' width='32'/></a></center></td>";
+													<td ></td>
+													<td ></td>
+													";
+													//<td ><center><a href ='upd_func.php?id=".$dato['ID_FUNCION']."'><img src='img/editar.png' height='32' width='32'/></a></center></td>
+													//<td ><center><a href ='del_func.php?id=".$dato['ID_FUNCION']."'><img src='img/eliminar.png' height='32' width='32'/></a></center></td>
 											}
 										?>
 										</tbody>

@@ -15,7 +15,7 @@ $consulta = "INSERT INTO convocatoria VALUES ('$con', '$nom', '$f_ini', '$fecha_
 //mandamos la consulta a la base de datos
 mysqli_query($conexion, $consulta);
 //mandamos la direccion de la pagina a la cual nos enviara una ves termando todo con el codigo de la nueva convocatoria
-header("Location:requisito_con.php?con=$con");
+header("Location:llenar_convocatoria.php?con=$con");
 }
 // para crear un nuevo requisito
 if (isset($_REQUEST['new_requisito'])) 

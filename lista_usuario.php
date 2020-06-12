@@ -167,7 +167,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon" ></span>
-								<input type="text" class="form-control" name="usr" id="usr" required >
+								<input type="text" class="form-control" name="usr" id="usr" required minlength="2" maxlength="42">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -176,7 +176,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="pwd" id="pwd" required >
+								<input type="text" class="form-control" name="pwd" id="pwd" required minlength="2" maxlength="42" >
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -194,7 +194,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon" ></span>
-								<input type="text" class="form-control" name="app" id="app" required >
+								<input type="text" class="form-control" name="app" id="app" required minlength="2" maxlength="42">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -203,72 +203,19 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="apm" id="apm" required >
+								<input type="text" class="form-control" name="apm" id="apm" required minlength="2" maxlength="42">
 							</div>
 						</div>
 						
-						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-							<label>CI </label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-							<div class="input-group">
-								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="ci" id="ci" pattern="[0-9]+.{6,}" required
-								title="Ingrese solo numeros minimo 6 caracteres" >
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-							<label>Expedido en:</label>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-							<div class="input-group">
-								<span class="input-group-addon"></span>
-								<select class="form-control" name='exp' id="exp" required>
-									<option value="">--- Seleccione Departamento ---</option>
-									<option value='Cochabamba'>Cochabamba</option>
-									<option value='La Paz'>La Paz</option>
-									<option value='Santa Cruz'>Santa Cruz</option>
-									<option value='Oruro'>Oruro</option>
-									<option value='Beni'>Beni</option>
-									<option value='Pando'>Pando</option>
-									<option value='Chuquisaca'>Chuquisaca</option>
-									<option value='Tarija'>Tarija</option>
-									<option value='Potosi'>Potosi</option>
-								</select>
-							</div>
-						</div>
 						
-						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-							<label>Rol </label>
-						</div>
 						
-						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-							<div class="input-group">
-								<span class="input-group-addon"></span>
-								<select class="form-control" name='rol' id="rol" required>
-
-									<option value="">--- Seleccione Rol ---</option>
-									<?php
-									//consulta para mostrar todos los roles 
-									require_once('conexion.php');
-									$conexion=Conectar();
-									$consulta1="select * from rol" ;
-									$query1=mysqli_query($conexion, $consulta1);
-									while ($dato1=mysqli_fetch_array($query1)) {
-										?>
-										<option value='<?php echo"".$dato1['ID_ROL']."" ?>'><?php echo"".$dato1['NOM_ROL']."" ?></option>
-										<?php  
-									}
-									 ?>
-									
-								</select>
-							</div>
-						</div>
+						
+						
 						
 						
 
 						<div class="modal-footer">
-							<button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_con">Crear</button>
+							<button name="new_user" type="submit" class="btn btn-success btn-sm" id="new_user">Crear</button>
 							<button  type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cerrar</button>
 						</div>												
 					</form>
@@ -278,6 +225,7 @@ include "includes/cabecera_home.inc";
 	</div><!-- End of Modal -->
 </div>
 <!-- /.container -->
+<script src="js/jquery-3.1.1.min.js"></script>
 <?php      
 include "includes/pie_home.inc";
 ?>

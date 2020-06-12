@@ -78,8 +78,12 @@ include "includes/cabecera_home.inc";
 													<td >".$cont."</td>
 													<td>".$dato["NOM_ROL"]."</td>
 													<td >".$dato["DESCRIPCION_ROL"]."</td>
-													<td ><center><a href ='upd_rol.php?id=".$dato['ID_ROL']."'><img src='img/editar.png' height='32' width='32'/></a></center></td>
-													<td ><center><a href ='del_rol.php?id=".$dato['ID_ROL']."'><img src='img/borrar.png' height='32' width='32'/></a></center></td>";
+													
+													<td ></td>
+													<td ></td>
+													";
+													//<td ><center><a href ='upd_rol.php?id=".$dato['ID_ROL']."'><img src='img/editar.png' height='32' width='32'/></a></center></td>
+													//<td ><center><a href ='del_rol.php?id=".$dato['ID_ROL']."'><img src='img/borrar.png' height='32' width='32'/></a></center></td>
 											}
 										?>
 										</tbody>

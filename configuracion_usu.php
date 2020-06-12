@@ -1,9 +1,9 @@
 <?php
 require_once('conexion.php');
 $conexion=Conectar();
-if(isset($_REQUEST['insert_rol']))
+if(isset($_REQUEST['new_user']))
 {
-	$usu=$_POST['usr'];
+$usu=$_POST['usr'];
 $nom= $_POST['nom'];
 $app=$_POST['app'];
 $apm=$_POST['apm'];
@@ -12,14 +12,12 @@ $ci=$_POST['ci'];
 $exp=$_POST['exp'];
 $rol=$_POST['rol'];
 
-$consulta="INSERT INTO usuario VALUES ('$con', '$usu', '$nom', '$app', '$apm', '$ci', '$exp', '1')";
+$consulta="INSERT INTO usuario VALUES ('$con', '$usu', '$nom', '$app', '$apm', '$ci', '$exp', 1)";
 
 mysqli_query($conexion, $consulta);
 
 
-$consulta1="INSERT INTO usu_rol VALUES(null, '$con', '$rol')";
 
-mysqli_query($conexion, $consulta1);
 header("Location:lista_usuario.php?m=3");
 }
 

@@ -8,6 +8,7 @@ $cod = $_SESSION['cod'];
 $ids = $_SESSION['usr'];
 $con = $_GET['cod'];
 $pos = $_GET['post'];
+$postu = $_GET['postu'];
 $consulta="select * from postulante where ID_POSTULANTE = '$pos'";
 $query=mysqli_query($conexion, $consulta);
 $dato=mysqli_fetch_array($query);
@@ -21,7 +22,8 @@ $dato=mysqli_fetch_array($query);
 					<h4 class="modal-title"> <i class="fa fa-file-text"></i> Formulario de Calificacion de Meritos</h4>
 				</div>
 				<div class="modal-body"  >
-					<form action="validacion.php?cod=<?php echo "$con"; ?>" method="post" enctype="multipart/form-data">
+					<form action="validacion.php?cod=<?php echo "$con";?>&pos=<?php echo "$pos";?>
+					&postu=<?php echo "$postu";?>" method="post" enctype="multipart/form-data">
 						<center><laber> Postulante: <?php echo "".$dato['NOM_POSTULANTE'].""; ?> <?php echo "".$dato['APE_PAT_POSTULANTE'].""; ?> <?php echo "".$dato['APE_MAT_POSTULANTE'].""; ?></label></center>
 						<center><h6> <i class="fa fa-info-circle"></i> Llene con mucho cuidado toda la informacion.</h6></center>
 						<ul>		
@@ -29,20 +31,20 @@ $dato=mysqli_fetch_array($query);
 								<label>Rendimiento Academico (65pts)</label>
 								
 			 					<div class="input-group">
-			 						<label>a) Promedio general de las materias cursadas (Incluye reprobadas y abandonos) 35%</label>
+			 						<label>a) Promedio general de las materias cursadas (Incluye reprobadas y abandonos) 35 puntos</label>
 									
 								</div>
 								<div class="input-group">
 									<span class="input-group-addon"></span>
-									<input name="puntaje1" placeholder="Ingrese el total de puntaje" style="width: 100%;"></input>
+									<input type="number" name="puntaje1" placeholder="Ingrese el total de puntaje" value="0" min="0" max="35" style="width: 100%;"></input>
 								</div>
 								<div class="input-group">
-			 						<label>b) Promedio general de materias en el periodo académico anterior 30%</label>
+			 						<label>b) Promedio general de materias en el periodo académico anterior 30 puntos</label>
 									
 								</div>
 								<div class="input-group">
 									<span class="input-group-addon"></span>
-									<input name="puntaje2" placeholder="Ingrese el total de puntaje" style="width: 100%;"></input>
+									<input type="number" name="puntaje2" placeholder="Ingrese el total de puntaje" value="0" min="0" max="30" style="width: 100%;"></input>
 								</div>
 							</div>
 
@@ -62,7 +64,7 @@ $dato=mysqli_fetch_array($query);
 								</div>
 								<div class="input-group">
 									<span class="input-group-addon"></span>
-									<input name="puntaje3" placeholder="Ingrese el total de puntaje" style="width: 100%;"></input>
+									<input type="number" name="puntaje3" placeholder="Ingrese el total de puntaje" value="0" min="0" max="12" style="width: 100%;"></input>
 								</div>
 								<div class="input-group">
 									<label>b) Auxiliares de Practicas Laboratorio Departamento de Informática - Sistemas (6pts)</label>	
@@ -72,7 +74,7 @@ $dato=mysqli_fetch_array($query);
 								</div>
 								<div class="input-group">
 									<span class="input-group-addon"></span>
-									<input name="puntaje4" placeholder="Ingrese el total de puntaje" style="width: 100%;"></input>
+									<input type="number" name="puntaje4" placeholder="Ingrese el total de puntaje" value="0" min="0" max="6" style="width: 100%;"></input>
 								</div>
 								<div class="input-group">
 									<label>c) Otros auxiliares en laboratorios de computación (2pts)</label>	
@@ -82,7 +84,7 @@ $dato=mysqli_fetch_array($query);
 								</div>
 								<div class="input-group">
 									<span class="input-group-addon"></span>
-									<input name="puntaje5" placeholder="Ingrese el total de puntaje" style="width: 100%;"></input>
+									<input type="number" name="puntaje5" placeholder="Ingrese el total de puntaje" value="0" min="0" max="2" style="width: 100%;"></input>
 								</div>
 							</div>
 
@@ -92,11 +94,11 @@ $dato=mysqli_fetch_array($query);
 									<label>a) Disertación cursos y/o participación en Proyectos: (5pts)</label>	
 								</div>
 								<div class="input-group">
-									<label>a. 2.5 pts/certificado</label>	
+									<label>a. 2 pts/certificado</label>	
 								</div>
 								<div class="input-group">
 									<span class="input-group-addon"></span>
-									<input name="puntaje6" placeholder="Ingrese el total de puntaje" style="width: 100%;"></input>
+									<input type="number" name="puntaje6" placeholder="Ingrese el total de puntaje" value="0" min="0" max="2" style="width: 100%;"></input>
 								</div>
 								
 							</div>
@@ -111,7 +113,7 @@ $dato=mysqli_fetch_array($query);
 								</div>
 								<div class="input-group">
 									<span class="input-group-addon"></span>
-									<input name="puntaje7" placeholder="Ingrese el total de puntaje" style="width: 100%;"></input>
+									<input type="number" name="puntaje7" placeholder="Ingrese el total de puntaje" value="0" min="0" max="10" style="width: 100%;"></input>
 								</div>
 								<div class="input-group">
 									<label>b) Certificación de capacitación en el área específica expedidos por el sistema universitario (4pts)</label>	
@@ -124,14 +126,14 @@ $dato=mysqli_fetch_array($query);
 								</div>
 								<div class="input-group">
 									<span class="input-group-addon"></span>
-									<input name="puntaje8" placeholder="Ingrese el total de puntaje" style="width: 100%;"></input>
+									<input type="number" name="puntaje8" placeholder="Ingrese el total de puntaje" value="0" min="0" max="4" style="width: 100%;"></input>
 								</div>
 								
 							</div>
 
 						</ul>
 						<div class="modal-footer">
-							</br><button name="new_nota" type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check"></i>Terminar Calificacion</button>
+							</br><button name="new_nota" type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check"></i>Guardar Calificacion</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->

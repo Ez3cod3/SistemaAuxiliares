@@ -3,7 +3,7 @@ session_start();
 require_once('conexion.php');
 $conexion=Conectar();
 
-$cod=$_GET['cod'];
+$con=$_GET['cod'];
 $postulante=$_GET['postu'];
 $postulacion=$_GET['post'];
 
@@ -22,8 +22,8 @@ $total = $nota1 + $nota2 + $nota3 + $nota4 + $nota5 + $nota6 + $nota7 + $nota8;
 		
 		
 		
-$insertarDato = "INSERT INTO nota VALUES (1, '$cod', '$postulacion', 1, '$total')";
+$insertarDato = "INSERT INTO nota VALUES (null, '$con', '$postulacion', 0,0, '$total')";
 		
 		mysqli_query($conexion, $insertarDato);
-		header("Location:calificacion_meritos.php?cod=$cod&m=3");
+		header("Location:calificacion_meritos.php?con=$con");
 ?>

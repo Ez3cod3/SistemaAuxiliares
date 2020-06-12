@@ -31,7 +31,7 @@ include "includes/cabecera_home.inc";
 										<?php
 										include_once('conexion.php');
 										$conexion=Conectar();
-										$consulta= "select * from convocatoria as con, auxiliatura as aux where con.COD_AUXILIATURA = aux.COD_AUXILIATURA";
+										$consulta= "select * from convocatoria ";
 										$sql= mysqli_query($conexion, $consulta);
 										$cont=0;
 										while ($dato=mysqli_fetch_array($sql)) 
@@ -44,7 +44,7 @@ include "includes/cabecera_home.inc";
 										</div>
 										<div class='hidden-xs col-sm-3 col-md-4 col-lg-4'>
 						
-											<h3 style='color:green;'>Descarga PDF</h3><hr>
+											<h3 style='color:green;'>Descarga PDF</h3>
 											<ul>
 												<div class='btn-group-vertical'>
 												

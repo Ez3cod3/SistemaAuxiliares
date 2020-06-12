@@ -57,7 +57,7 @@ include "includes/cabecera_home.inc";
 													<td ><?php echo "".$dato['NOM_CONVOCATORIA'].""; ?></td>
 													<td><a href="calificacion_documentos.php?con=<?php echo "".$dato['COD_CONVOCATORIA'].""; ?>" class="btn btn-primary btn-sm"></i>Ir</a></td>
 													<td><a href="calificacion_meritos.php?con=<?php echo "".$dato['COD_CONVOCATORIA'].""; ?>" class="btn btn-primary btn-sm"></i>Ir</a></td>
-													<td ><a href="calificacion_concimientos.php?con=<?php echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Ir</a></td>
+													<td ></td>
 													
 													
 										<?php

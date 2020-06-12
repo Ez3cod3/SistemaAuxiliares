@@ -79,7 +79,10 @@ include "includes/cabecera_home.inc";
 													<td>".$dato["NOM_FUNCION"]."</td>
 													<td >".$dato["NOM_FORMULARIO"]."</td>
 													<td >".$dato["URL_FORMULARIO"]."</td>
-													<td ><center><a href ='del_form_func.php?id=".$dato['NOM_FORMULARIO']."'><img src='img/eliminar.png' height='32' width='32'/></a></center></td>";
+													<td ></td>
+													
+													";
+													//<td ><center><a href ='del_form_func.php?id=".$dato['NOM_FORMULARIO']."'><img src='img/eliminar.png' height='32' width='32'/></a></center></td>
 											}
 										?>
 										</tbody>

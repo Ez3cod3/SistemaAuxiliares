@@ -115,7 +115,7 @@ include "includes/cabecera_home.inc";
 					<h4 class="modal-title"> <i class="fa fa-plus-square"></i> Asignar Rol a Usuarios</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-signin" action="configure.php" method="post" enctype="multipart/form-data">
+					<form class="form-signin" action="configuracion.php" method="post" enctype="multipart/form-data">
 						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 							<label>Rol</label>
 						</div>

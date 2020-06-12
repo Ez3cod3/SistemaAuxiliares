@@ -79,7 +79,9 @@ include "includes/cabecera_home.inc";
 													<td >".$cont."</td>
 													<td>".$dato["NOM_ROL"]."</td>
 													<td >".$dato["NOM_FUNCION"]."</td>
-													<td ><center><a href ='del_rol_func.php?id=".$dato['ID_ROL_FUN']."'><img src='img/eliminar.png' height='32' width='32'/></a></center></td>";
+													<td ></td>
+													";
+													//<td ><center><a href ='del_rol_func.php?id=".$dato['ID_ROL_FUN']."'><img src='img/eliminar.png' height='32' width='32'/></a></center></td>
 											}
 										?>
 										</tbody>

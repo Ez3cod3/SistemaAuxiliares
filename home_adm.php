@@ -35,7 +35,7 @@ include "includes/cabecera_home.inc";
 					</div>
 				</div>
 			</section>
-			<h3><b style="color:blue;">Usuario: <?php echo "".$dato['NOM_USUARIO'].""; ?> </b></h3><hr>
+			
 			
 						
         </div>

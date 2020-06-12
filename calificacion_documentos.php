@@ -32,8 +32,9 @@ include "includes/cabecera_home.inc";
 											<tr>
 												<th>#</th>
 												<th>Postulante</th>
-												<th>Documentacion</th>
+												<th>Auxiliatura(s)</th>
 												<th>Estado</th>
+												
 												
 											</tr>
 										</thead>
@@ -62,14 +63,29 @@ include "includes/cabecera_home.inc";
 													$aux3 = 0;
 													$consulta1="select * from nota where ID_POSTULACION = '$aux1' and COD_CONVOCATORIA = '$aux2' and NOTA_MERITOS = '$aux3' ";
 													$query1=mysqli_query($conexion, $consulta1);
+													$consulta2="select * from con_aux where COD_AUXILIATURA = '$con'";
+													$query2=mysqli_query($conexion, $consulta2);
+													$dato2=mysqli_fetch_array($query2);
 													?>
-														
-													
+													<td >	LCO-ADM</td>
+													<?php
+													$consulta3="select * from observacion where COD_CONVOCATORIA = '$aux2' and ID_POSTULACION = '$aux1'";
+													$query3=mysqli_query($conexion, $consulta3);
+													if ($dato3=mysqli_fetch_array($query3)) {
+													 		?>
+													 		<td ><?php echo "".$dato3['validez'].""; ?></td>
 
-													 
+													<?php	 		
+													 	}else {
+													 	?>
+													 	<td ><a href="validacion_documentos.php?con=<?php echo"$con" ?>&post=<?php echo"$aux1" ?>" class="btn btn-primary btn-sm"></i>Validar</a></td>
+
+													 	<?php	
+													 	}	
+
+													 ?>
 													
-													<td ><a href="validacion_documentos.php?con=<?php echo"$con" ?>&post=<?php echo"$aux1" ?>" class="btn btn-primary btn-sm"></i>Validar</a></td>
-													<td ><a href="calificacion_concimientos.php" class="btn btn-primary btn-sm"></i>Validar</a></td>
+													
 													
 													
 										<?php
