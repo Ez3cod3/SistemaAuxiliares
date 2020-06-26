@@ -44,7 +44,7 @@ include "includes/cabecera_home.inc";
 										</div>
 										<div class='hidden-xs col-sm-3 col-md-4 col-lg-4'>
 						
-											<h3 style='color:green;'>Descarga PDF</h3>
+											<h3 style='color:green;'>Descarga PDF</h3><hr>
 											<ul>
 												<div class='btn-group-vertical'>
 												
@@ -69,7 +69,7 @@ include "includes/cabecera_home.inc";
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title"> <i class="fa fa-user fa-fw"></i>Login</h4>
+					<h4 class="modal-title"> <i class="fa fa-user fa-fw"></i>Identificarse</h4>
 				</div>
 				<div class="modal-body">
 					<form class="form-signin" action="validar_usu.php" method="post" enctype="multipart/form-data">
@@ -79,7 +79,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" placeholder="Identificacion" name="cod_usu">	
+								<input type="text" class="form-control" placeholder="Identificacion" name="cod_usu" minlength="1" maxlength="12" required>	
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
@@ -88,11 +88,11 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="password" class="form-control" placeholder="Contraseña" name="con_usu">
+								<input type="password" class="form-control" placeholder="Contraseña" name="con_usu" minlength="1" maxlength="16" required>
 							</div>
 						</div>
 						<div class="modal-footer">
-							</br><button name="asig_form" type="submit" class="btn btn-success btn-sm" id="asig_rol"><i class="fa fa-check"></i>Iniciar Secion</button>
+							</br><button name="asig_form" type="submit" class="btn btn-success btn-sm" id="asig_rol"><i class="fa fa-check"></i>Ingresar</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->

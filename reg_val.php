@@ -3,7 +3,7 @@ include "includes/cabecera_home.inc";
 require_once('conexion.php');
 $conexion = Conectar();
 $id=$_GET['id'];
-$consulta="select * from postulacion as pos, convocatoria as con, auxiliatura as aux, postulante as postu where pos.COD_CONVOCATORIA = con.COD_CONVOCATORIA and con.COD_AUXILIATURA = aux.COD_AUXILIATURA and pos.ID_POSTULANTE = postu.ID_POSTULANTE and postu.ID_POSTULANTE = '$id' ";
+$consulta="select * from postulante where ID_POSTULANTE = '$id' ";
 $sql= mysqli_query($conexion,$consulta);
 $dato= mysqli_fetch_array($sql);
 ?>
@@ -17,7 +17,7 @@ $dato= mysqli_fetch_array($sql);
          <div id="page-wrapper"><br>
 			
 			
-			<h3><b style="color:blue;"><?php echo "".$dato['NOM_CONVOCATORIA'].""; ?></b></h3><hr>
+			
 			
 						<section>
 							<div class='row'>

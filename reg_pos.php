@@ -13,12 +13,12 @@
 		$conexion=Conectar();
 		$insertar="INSERT INTO postulante values (null,'$nompos', '$apepat','$apermat', '$mailpos', '$cipos', '$codsis' )";
 		mysqli_query($conexion,$insertar);
-		$consulta1="select MAX(ID_POSTULANTE) from postulante where CI_POSTULANTE = $cipos and COD_SIS_POSTULANTE ";
+		$consulta1="select MAX(ID_POSTULANTE) from postulante ";
 		$sql=mysqli_query($conexion, $consulta1);
 		$dato=mysqli_fetch_array($sql);
 		$aux=$dato['MAX(ID_POSTULANTE)'];
 		echo "$aux";
-		$insertar1="INSERT INTO postulacion values ('$codcon', '$codaux', '$aux', null)";
+		$insertar1="INSERT INTO postulacion values ('$codcon', null, '$aux',null, '$codaux')";
 		$sql1=mysqli_query($conexion, $insertar1);
 
 		header("Location:reg_val.php?id=$aux")

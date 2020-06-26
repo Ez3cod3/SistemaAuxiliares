@@ -26,7 +26,7 @@
 		}
 
 		else {
-			echo "Error";
+			echo "Usuario y/o Contraseña errónea inténtelo de nuevo";
 		
 		exit;
 		}

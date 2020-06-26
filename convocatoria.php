@@ -3,7 +3,7 @@ include "includes/cabecera_home.inc";
 require_once('conexion.php');
 $conexion = Conectar();
 $con=$_GET['id'];
-$consulta="select * from convocatoria as con, auxiliatura as aux where con.COD_AUXILIATURA = aux.COD_AUXILIATURA and con.COD_CONVOCATORIA = '$con'";
+$consulta="select * from convocatoria where COD_CONVOCATORIA = '$con'";
 $sql= mysqli_query($conexion,$consulta);
 $dato= mysqli_fetch_array($sql);
 ?>

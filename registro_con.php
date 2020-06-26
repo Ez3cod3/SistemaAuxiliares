@@ -4,7 +4,7 @@ include "includes/cabecera_home.inc";
 require_once('conexion.php');
 $conexion = Conectar();
 $con=$_GET['id'];
-$consulta="select * from convocatoria as con, auxiliatura as aux where con.COD_AUXILIATURA = aux.COD_AUXILIATURA and con.COD_CONVOCATORIA = '$con'";
+$consulta="select * from convocatoria where COD_CONVOCATORIA = '$con'";
 $sql= mysqli_query($conexion,$consulta);
 $dato= mysqli_fetch_array($sql);
 ?>
@@ -50,7 +50,7 @@ $dato= mysqli_fetch_array($sql);
 															<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 																<div class="input-group">
 																	<span class="input-group-addon" ><img src="img/punto_rojo.png" width=10 height=10></span>
-																	<input type="text"minlength="2" class="form-control" name="nom_pos" id="nom_pos">
+																	<input type="text"minlength="2" class="form-control" name="nom_pos" id="nom_pos" value minlength="2" maxlength="41">
 																</div>
 															</div>
 															
@@ -60,7 +60,7 @@ $dato= mysqli_fetch_array($sql);
 															<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 																<div class="input-group">
 																	<span class="input-group-addon" ><img src="img/punto_rojo.png" width=10 height=10></span>
-																	<input type="text" class="form-control" minlength="3" name="ape_pat_pos" id="ape_pat_pos">
+																	<input type="text" class="form-control" minlength="3" name="ape_pat_pos" id="ape_pat_pos" value minlength="2" maxlength="41">
 																</div>
 															</div>
 
@@ -70,7 +70,16 @@ $dato= mysqli_fetch_array($sql);
 															<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 																<div class="input-group">
 																	<span class="input-group-addon" ><img src="img/punto_rojo.png" width=10 height=10></span>
-																	<input type="text" class="form-control" minlength="2" name="ape_mat_pos" id="ape_mat_pos">
+																	<input type="text" class="form-control" minlength="2" name="ape_mat_pos" id="ape_mat_pos" value minlength="2" maxlength="41">
+																</div>
+															</div>
+															<div class="col-xs-15 col-sm-15 col-md-8 col-lg-8">
+																<label>Direccion </label>
+															</div>
+															<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+																<div class="input-group">
+																	<span class="input-group-addon" ><img src="img/punto_rojo.png" width=10 height=10></span>
+																	<input type="text" class="form-control" minlength="2" name="ape_mat_pos" id="ape_mat_pos" value minlength="2" maxlength="50">
 																</div>
 															</div>
 															<div class="col-xs-15 col-sm-15 col-md-8 col-lg-8">
@@ -79,7 +88,7 @@ $dato= mysqli_fetch_array($sql);
 															<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 																<div class="input-group">
 																	<span class="input-group-addon" ><img src="img/punto_rojo.png" width=10 height=10></span>
-																	<input type="email" class="form-control" name="mail_pos" minlength="8" id="mail_pos">
+																	<input type="email" class="form-control" name="mail_pos" minlength="8" maxlength="72" id="mail_pos">
 																</div>
 															</div>
 
@@ -94,15 +103,7 @@ $dato= mysqli_fetch_array($sql);
 															</div>
 
 
-															<div class="col-xs-15 col-sm-15 col-md-8 col-lg-8">
-																<label>Cedula de identidad </label>
-															</div>
-															<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-																<div class="input-group">
-																	<span class="input-group-addon" ><img src="img/punto_rojo.png" width=10 height=10></span>
-																	<input type="text" class="form-control" minlength="4" name="ci_pos" id="ci_pos">
-																</div>
-															</div>
+															
 															<div class="col-xs-15 col-sm-15 col-md-8 col-lg-8">
 																<label>Seleccione la Auxiliatura a la que desea postularse </label>
 															</div>

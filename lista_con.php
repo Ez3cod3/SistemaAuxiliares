@@ -41,11 +41,9 @@ include "includes/cabecera_home.inc";
 												<th>#</th>
 												<th>Cod. Convocatoria</th>
 												<th>Nombre Convocatoria</th>
-												<th>Auxiliaturas</th>
+												
 												<th>Informacion</th>
-												<th>Requisitos</th>
-												<th>Areas Evaluacion</th>
-												<th>Editar</th>
+												
 												
 											</tr>
 										</thead>
@@ -66,51 +64,14 @@ include "includes/cabecera_home.inc";
 													<td><?php  echo "".$dato['COD_CONVOCATORIA']."";?></td>
 													<td ><?php  echo "".$dato['NOM_CONVOCATORIA']."";?></td>
 													<td ></td>
-													<!-->
-
-													<?php
-													$consulta2= "select * from requisito where COD_CONVOCATORIA = '$cod'";
-													$query2=mysqli_query($conexion,$consulta2);
-													if (mysqli_fetch_array($query)) {
-													?>
-													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
-													<?php
-													}
-													else 
-													{
-														?>
-														<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Ver</a></td>
-														<?php
-													}
-													?>
-
-													<?php
-													$consulta3= "select * from requisito where COD_CONVOCATORIA = '$cod'";
-													$query2=mysqli_query($conexion,$consulta3);
-													if (mysqli_fetch_array($query)) {
-													?>
-													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
-													<?php
-													}
-													else 
-													{
-														?>
-														<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Ver</a></td>
-														<?php
-													}
-													?>
-													<td ><a  href="requisito_con.php?cod=<?php  echo "".$dato['COD_CONVOCATORIA']."";?>" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
-													<td ><a  href="#new_user" data-toggle="modal" class="btn btn-primary btn-sm"></i>Sin Datos</a></td>
 													
-												
-													
-												
 												<?php  
+
 
 
 												$identi++;
 											}
-										?></!-->
+										?>
 										
 										</tbody>
 										
@@ -143,7 +104,7 @@ include "includes/cabecera_home.inc";
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title"></i>Llenar los datos de la Convocatoria para Laboratorio</h4>
-					<h4 class="modal-title"></i>Paso 1 de 3</h4>
+					<h4 class="modal-title"></i></h4>
 				</div>
 				<div class="modal-body">
 					<!-- aca empieza la ventana modal !-->
@@ -163,7 +124,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="nom_con" id="nom_con" minlength="6" maxlength="100" required placeholder="Nombre de la Convocatoria">
+								<input type="text" class="form-control" name="nom_con" id="nom_con" minlength="6" maxlength="200" required placeholder="Nombre de la Convocatoria">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
@@ -184,12 +145,44 @@ include "includes/cabecera_home.inc";
 								<input type="date" class="form-control" name="fecha_fin" id="fecha_fin" required>
 							</div>
 						</div>
-						
+						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+							<label>PDF</label>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+							<div class="input-group">
+								<span class="input-group-addon"></span>
+								<input type="file" class="form-control" name="file" id="file" required>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+							<label>Tipo de Convocatoria</label>
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+							<div class="input-group">
+							<span class="input-group-addon" ></span>
+							<select class="form-control" minlength="4" name="ci_pos" id="ci_pos">
+								<option value="">---Seleccionar Tipo de Convocatoria---</option>
+								<option value="1">Convocatoria Docencia</option>
+								<option value="2">Convocatoria Laboratorios</option>
+							</select> 
+							</div>
+						</div>
+						<?php 
+
+
+						//if(isset($_FILES['documento']) && $_FILES['documento']['type']=='application/pdf'){
+							//move_uploaded_file ($_FILES['documento']['tmp_name'] , '../img/upload/'.$_FILES['documento']['name']);
+						//}
+
+						?>
+
+
+			
 						
 						
 						
 						<div class="modal-footer">
-							</br><button name="new_con" type="submit" class="btn btn-success btn-sm" id="new_con"></i>Ir a Paso 2</button>
+							</br><button name="new_con" type="submit" class="btn btn-success btn-sm" id="new_con"></i>Crear Convocatoria</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->

@@ -55,7 +55,8 @@
                                     
                                     <div id="v" class='panel-collapse collapse'>
                                         <div class='panel-body' >
-                                        <a href='' ><li style='list-style:none;'>Lista de  Habiles</a></li>
+                                        <a href='' ><li style='list-style:none;'>Lista de  Habilitados</a></li>
+                                        <a href='' ><li style='list-style:none;'>Lista de  Resultados</a></li>
                                         
 
                                     </div>

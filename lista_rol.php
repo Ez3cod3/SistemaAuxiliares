@@ -91,7 +91,7 @@ include "includes/cabecera_home.inc";
 									</table>
 									<div class="control-group">
 										<div class="controls">
-											<a a href="#new_rol" data-toggle="modal" class="btn btn-primary btn-sm"><i class="fa fa-plus-square"></i> Nuevo</a>
+											<a a href="#new_rol" data-toggle="modal" class="btn btn-primary btn-sm"><i class="fa fa-plus-square"></i> Nuevo Rol</a>
 										</div>
 									</div>
 								</div>
@@ -121,7 +121,7 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<input type="text" class="form-control" name="rol" id="rol" required>
+								<input type="text" class="form-control" name="rol" id="rol" required minlength="3" maxlength="42">
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
@@ -130,11 +130,11 @@ include "includes/cabecera_home.inc";
 						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 							<div class="input-group">
 								<span class="input-group-addon"></span>
-								<textarea class="form-control" name="des_rol" id="des_rol" required rows="3"></textarea>
+								<textarea class="form-control" name="des_rol" id="des_rol" required rows="3" minlength="3" maxlength="100"></textarea>
 							</div>
 						</div>
 						<div class="modal-footer">
-							</br><button name="insert_rol" type="submit" class="btn btn-success btn-sm" id="enviar"><i class="fa fa-check"></i> Insertar Datos</button>
+							</br><button name="insert_rol" type="submit" class="btn btn-success btn-sm" id="enviar"><i class="fa fa-check"></i> Crear Rol</button>
 						</div>												
 					</form>
 				</div><!-- End of Modal body -->
